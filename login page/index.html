@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="expense tracker, budget planner,">
+    <link rel="stylesheet" href="style.css">
+    <script scr="script.js"defer></script>
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+         rel="stylesheet">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="description" content="The modern app that help you prepare your budget limit, track your monthly expenses and mitigate financial risk.">
+    <title>Login page</title>
+  </head>
+  <body>
+    <main class="login-container">
+    <div class="login-box">
+      <div class="logo">
+        <img src="../login page/logo.jpg" alt="FinTracker logo" />
+        <span>FinTracker</span> 
+      </div>
+
+      <h2>Login to FinTracker</h2>
+      <p class="signup-text">
+        Don’t have an account yet?
+        <a href="../sign up page/signup.html">Sign Up here!</a>
+      </p>
+
+      <form id="loginForm">
+        <label for="email">E-mail address</label>
+        <input type="email" id="email" placeholder="E-mail address" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password" required />
+
+        <div class="forgot-password">
+          <a href="../reset page/reset.html">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="login-btn">Login to FinTracker</button>
+      </form>
+
+      <div class="divider">— or login via —</div>
+
+      <div class="social-login">
+        <button class="box"> <i class="fab fa-facebook-f" style=" color:#1877F2; font-size:24px;"> </i><div class="text"> Sign up with Facebook</div></button>
+        <button class="box"> <i class="fab fa-google" style="color:rgba(234, 71, 42, 0.859); font-size:24px;"> </i><div class="text"> Sign up with Google</div></button>
+        <button class="box"> <i class="fab fa-apple" style="color:#000000; font-size:24px;"> </i><div class="text">Sign up with Apple</div></button>
+      </div>
+      
+      <footer class="terms">
+        Brought to you by Septa Technology
+      </footer>
+    </div>
+  </main>
+</html>

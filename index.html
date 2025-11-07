@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fin App</title>
+    <link href="./assets/images/fin-app-logo.jpg" rel="icon" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- static navbar header for the  website -->
+    <header class="header">
+      <div class="flex-btw nav">
+        <!-- fin app logo -->
+        <div>
+          <a href="index.html"
+            ><img
+              src="./assets/images/fin-app-logo.jpg"
+              alt="logo"
+              width="50px"
+          /></a>
+        </div>
+        <!-- Nav link for dashboard and budget -->
+        <ul class="flex-center-lg navlink">
+          <li>
+            <a href="index.html">Dashboard</a>
+          </li>
+          <li>
+            <a href="index.html">Budget</a>
+          </li>
+        </ul>
+        <!-- user image and clickable items -->
+        <div class="menu">
+          <div>
+            <button class="btn flex-center-sm">
+              <img
+                src="./assets/images/Jerome Bell.png"
+                alt="user"
+                width="40px"
+                class="user"
+              />
+              <img
+                src="./assets/images/down-arrow.png"
+                alt="dropdown-icon"
+                width="25px"
+              />
+            </button>
+          </div>
+          <!-- links which shows when you hover on user image -->
+          <div class="hidden flex-col">
+            <div class="subcard">
+              <p>Precious James</p>
+              <p>preciousjames@gmail.com</p>
+            </div>
+            <ul class="flex-col">
+              <div>
+                <li>
+                  <div class="settings-menu">
+                    <a href="#" class="flex-btw">
+                      Settings
+                      <img
+                        src="./assets/images/down-arrow.png"
+                        alt="dropdown-icon"
+                        width="20px"
+                      />
+                    </a>
+                    <div class="hid">
+                      <div class="flex-col">
+                        <a href="./account/account.html">Account</a>
+                        <a href="index.html">All Categories</a>
+                        <a href="./html/card.html">Connected Bank Acc.</a>
+                        <a href="index.html">Support</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </div>
+              <li>
+                <a href="index.html">Log-out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- mobile navlinks -->
+        <div class="mobile-menu">
+          <div>
+            <button class="btn menu-btn">
+              <img
+                src="./assets/images/menu.png"
+                alt="dropdown-icon"
+                width="30px"
+                class="menu-icon"
+              />
+            </button>
+          </div>
+
+          <div class="sidebar">
+            <div class="sidebar-link">
+              <div class="flex-center-sm user-mobile">
+                <img
+                  src="./assets/images/Jerome Bell.png"
+                  alt="user"
+                  width="40px"
+                  class="user"
+                />
+                <p>Precious James</p>
+              </div>
+              <ul class="flex-col">
+                <li>
+                  <a href="index.html">Dashboard</a>
+                </li>
+                <li>
+                  <a href="index.html">Budget</a>
+                </li>
+                <div>
+                  <li>
+                    <div id="settings-menu">
+                      <a href="#" class="flex-btw">
+                        Settings
+                        <img
+                          src="./assets/images/down-arrow.png"
+                          alt="dropdown-icon"
+                          width="20px"
+                        />
+                      </a>
+                      <div id="hid">
+                        <div class="flex-col">
+                          <a href="index.html">Account</a>
+                          <a href="index.html">All Categories</a>
+                          <a href="./html/card.html">Connected Bank Acc.</a>
+                          <a href="index.html">Support</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+                <li>
+                  <a href="index.html">Log-out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main></main>
+    <footer></footer>
+  </body>
+</html>

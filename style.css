@@ -1,0 +1,195 @@
+body {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0px 0px;
+  font-family: "poppins";
+}
+
+/* Header and Navbar section */
+header {
+  padding: 7px 50px;
+  border-bottom: #ccc solid 1px;
+}
+
+.user {
+  border-radius: 100%;
+}
+
+.navlink li a:hover {
+  color: green;
+  opacity: 1;
+  border-bottom: solid 2px green;
+  padding-bottom: 22px;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu .hidden {
+  display: none;
+  right: 0;
+}
+
+.menu:hover .hidden {
+  display: flex;
+  position: absolute;
+  background-color: rgb(231, 255, 231);
+  border-radius: 12px;
+  padding: 16px 30px;
+}
+
+.subcard {
+  background-color: rgb(211, 253, 211);
+  border-radius: 12px;
+  padding: 16px 16px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.subcard > p {
+  padding: 0px;
+  margin: 3px 0px;
+}
+
+.subcard > p:nth-child(2) {
+  font-size: 12px;
+}
+
+.settings-menu {
+  position: relative;
+}
+
+.hid.open {
+  display: block;
+  width: 100%;
+}
+
+.hid {
+  display: none;
+  border-block: 1px solid #ccc;
+  padding: 30px 0px;
+  margin-top: 10px;
+}
+
+#hid.open {
+  display: block;
+  width: 100%;
+}
+
+#hid {
+  display: none;
+  border-block: 1px solid #ccc;
+  padding: 30px 0px;
+  margin-top: 10px;
+}
+
+.menu-icon.close {
+  content: url("./assets/images/close.png");
+}
+
+/* mobile menu and sidebar styles */
+.sidebar {
+  position: fixed;
+  background-color: rgb(231, 255, 231);
+  border-radius: 12px;
+  padding: 12px 0px;
+  height: 100%;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  transition: right 0.5s ease-in-out;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-link {
+  padding: 50px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user-mobile {
+  padding-bottom: 10px;
+  border-bottom: #ccc 1px solid;
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 999;
+  right: 25px;
+  top: 15px;
+}
+
+/* End of header and navbar styles */
+
+/* utility style */
+.flex-btw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-center-lg {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.flex-center-sm {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+ul,
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  color: black;
+  opacity: 0.9;
+}
+
+ul li a:hover {
+  color: green;
+  opacity: 1;
+}
+
+/* End of utitlity styles */
+
+
+/* Mobile responsivesness */
+
+@media (max-width: 640px) {
+  .menu,
+  .navlink {
+    display: none;
+  }
+  header {
+    padding: 7px 25px;
+  }
+}
+
+@media (min-width: 641px) {
+  .mobile-menu {
+    display: none;
+  }
+}

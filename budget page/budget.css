@@ -1,17 +1,20 @@
-body {
-  font-family: sans-serif;
-  margin:0
-  padding:0
-  width: 100%
+
+
+main{
+  margin: 0px auto;
+  padding:15px 55px;
+  overflow-x: hidden;
+
 }
 
 .folder{
     box-sizing: border-box;
     width: 70%;
-    margin: 20px;
+    margin: 100px 0px;
     border: 2px solid whitesmoke;
     border-radius: 8px;
     padding: 45px 20px;
+    justify-self: center;
 }
 
 .folder h3{
@@ -35,8 +38,8 @@ body {
     cursor: pointer;
 }
 
-button {
-    padding: 10px 20px;
+.btns {
+  padding: 10px 20px;
   background-color: #00c292;
   color: white;
   border: none;
@@ -52,24 +55,34 @@ button {
     font-size: 20px;
 }
 .modal {
-  /* display: none;  */
-  position: fixed;
+  position: absolute;
+  display: none;
   z-index: 100;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
-  overflow: auto;
+  min-height: 100vh;
   background-color: rgba(0,0,0,0.5);
+  overflow-y: scroll;
+  
+}
+
+.modal-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
 }
 
 .modal-content {
   background-color: #fff;
-  margin: 10% auto;
-  padding: 20px;
+  margin: 30px;
+  padding: 40px;
   width: 90%;
-  max-width: 400px;
+  max-width: 500px;
   border-radius: 8px;
+ 
 }
 
 .name{
@@ -103,11 +116,12 @@ button {
 
 .recurrence-options {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 10px;
   margin: 8px auto;
   width: 100%;
   object-fit: cover;
+   overflow-x: scroll;
 }
 
 /* Hide the actual radio buttons */
@@ -124,12 +138,17 @@ button {
   cursor: pointer;
   width: 100%;
   transition: all 0.3s;
+   text-align: center;
+  
 }
+
+
 
 #recurrence{
     margin: 12px;
     font-weight: lighter;
     color: grey;
+    
 }
 
 .recurrence-options label:hover{
@@ -139,6 +158,8 @@ button {
 
 label{
     text-decoration-color: grey;
+    font-size: 12px;
+   
 }
 
 #startdate{
@@ -162,9 +183,8 @@ input[type="date"]{
 }
 
 #create{
-    margin: 16px;
-    background-color:aliceblue;
-    color: rgb(108, 107, 107);
+    background-color: green;
+    color: white;
     font-size: 14px;
 }
 
@@ -173,6 +193,9 @@ input[type="date"]{
   margin: 20px auto;
   font-family: sans-serif;
 }
+
+
+
 
 /* Form row for side-by-side inputs */
 .form-row {
@@ -212,4 +235,18 @@ input[type="date"]{
 
 #currency{
     width: 100%;
+}
+
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+@media (max-width: 640px) {
+ 
+  .modal-content {
+  width: 70%;
+   max-width: 300px;
+  }
+
 }

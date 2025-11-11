@@ -6,7 +6,7 @@ document.querySelector(".add-wallet").addEventListener("click", () => {
   
   document.querySelector(".connect-bank").addEventListener("click", () => {
     alert("Redirecting to bank connection...");
-    window.location.href = "connect-bank.html"; // example redirect
+    window.location.href = "../html/card.html"; // example redirect
   });
   
   // Date range validation example

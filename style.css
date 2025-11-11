@@ -2,13 +2,14 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0px 0px;
-  font-family: "poppins";
+   font-family: sans-serif ;
 }
 
 /* Header and Navbar section */
 header {
-  padding: 7px 50px;
+  padding: 7px 55px;
   border-bottom: #ccc solid 1px;
+  background: white;
 }
 
 .user {
@@ -119,12 +120,16 @@ header {
 
 .menu-btn {
   position: absolute;
-  z-index: 999;
+  z-index: 99;
   right: 25px;
   top: 15px;
 }
 
 /* End of header and navbar styles */
+
+
+
+
 
 /* utility style */
 .flex-btw {

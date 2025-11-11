@@ -1,120 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="expense tracker, budget help,">  
-    <meta name="description" content="The modern app that help you prepare your budget limit, track your monthly expenses and mitigate financial risk.">
-    <title>Document</title> 
-    <link rel="stylesheet" href="../budget page/budget.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-         rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.css">
-         <script type="module" src="../budget page/budget.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="expense tracker, budget help," />
+    <meta
+      name="description"
+      content="The modern app that help you prepare your budget limit, track your monthly expenses and mitigate financial risk."
+    />
+    <title>FinTracker</title>
+    <link rel="stylesheet" href="./budget.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.css"
+    />
+    <link href="../assets/images/fin-app-logo.jpg" rel="icon" type="image/png" />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../script.js" defer></script>
+    <script type="module" src="./budget.js"></script>
   </head>
 
   <body>
+     <!-- static navbar header for the  website -->
+    <header class="header">
+      <div class="flex-btw nav">
+        <!-- fin app logo -->
+        <div>
+          <a href="./budget.html"
+            ><img
+              src="../assets/images/fin-app-logo.jpg"
+              alt="logo"
+              width="50px"
+          /></a>
+        </div>
+        <!-- Nav link for dashboard and budget -->
+        <ul class="flex-center-lg navlink">
+          <li>
+            <a href="../dashboard page/dashboard.html">Dashboard</a>
+          </li>
+          <li>
+            <a href="../budget page/budget.html">Budget</a>
+          </li>
+        </ul>
+        <!-- user image and clickable items -->
+        <div class="menu">
+          <div>
+            <button class="btn flex-center-sm">
+              <img
+                src="../assets/images/Jerome Bell.png"
+                alt="user"
+                width="40px"
+                class="user"
+              />
+              <img
+                src="../assets/images/down-arrow.png"
+                alt="dropdown-icon"
+                width="25px"
+              />
+            </button>
+          </div>
+          <!-- links which shows when you hover on user image -->
+          <div class="hidden flex-col">
+            <div class="subcard">
+              <p>Precious James</p>
+              <p>preciousjames@gmail.com</p>
+            </div>
+            <ul class="flex-col">
+              <div>
+                <li>
+                  <div class="settings-menu">
+                    <a href="#" class="flex-btw">
+                      Settings
+                      <img
+                        src="../assets/images/down-arrow.png"
+                        alt="dropdown-icon"
+                        width="20px"
+                      />
+                    </a>
+                    <div class="hid">
+                      <div class="flex-col">
+                        <a href="../account/account.html">Account</a>
+                        <a href="../categories/category.html">All Categories</a>
+                        <a href="../html/card.html">Connected Bank Account</a>
+                        <a href="../support/support.html">Support</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </div>
+              <li>
+                <a href="../index.html">Log-out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- mobile navlinks -->
+        <div class="mobile-menu">
+          <div>
+            <button class="btn menu-btn">
+              <img
+                src="../assets/images/menu.png"
+                alt="dropdown-icon"
+                width="30px"
+                class="menu-icon"
+              />
+            </button>
+          </div>
+
+          <div class="sidebar">
+            <div class="sidebar-link">
+              <div class="flex-center-sm user-mobile">
+                <img
+                  src="../assets/images/Jerome Bell.png"
+                  alt="user"
+                  width="40px"
+                  class="user"
+                />
+                <p>Precious James</p>
+              </div>
+              <ul class="flex-col">
+                <li>
+                  <a href="../dashboard page/dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                  <a href="../budget page/budget.html">Budget</a>
+                </li>
+                <div>
+                  <li>
+                    <div id="settings-menu">
+                      <a href="#" class="flex-btw">
+                        Settings
+                        <img
+                          src="../assets/images/down-arrow.png"
+                          alt="dropdown-icon"
+                          width="20px"
+                        />
+                      </a>
+                      <div id="hid">
+                        <div class="flex-col">
+                          <a href="../account/account.html">Account</a>
+                          <a href="../categories/category.html">All Categories</a>
+                          <a href="../html/card.html">Connected Bank Account</a>
+                          <a href="../support/support.html">Support</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+                <li>
+                  <a href="../index.html">Log-out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
     <h3>Budgets</h3>
     <div class="folder">
-        <p class="text">Take control of your expenses and save more money by organising your budgets.</p>
-        <button id="openformbtn">Create a New Budget</button>
+      <p class="text">
+        Take control of your expenses and save more money by organising your
+        budgets.
+      </p>
+      <button id="openformbtn" class="btns">Create a New Budget</button>
     </div>
 
     <div class="modal" id="budgetform">
-        <div class="modal-content">
-            <span id="closebtn" class="close">&times</span>
-            <h2>Add New Budget</h2>
-            <h3 class="heading"><i class="feather icon-dollar-sign"></i> General Info</h3>
-            <form action>
-                <div class="budget-form">
-  <!-- Budget Name -->
-  <div class="form-group">
-    <label for="budgetName">Budget Name</label>
-    <input type="text" id="budgetName" placeholder="Enter budget name">
-  </div>
+      <div class="modal-center">
+      <div class="modal-content">
+     
+        <span id="closebtn" class="close">&times</span>
+        <h2>Add New Budget</h2>
+        <h3 class="heading">
+          <i class="feather icon-dollar-sign"></i> General Info
+        </h3>
+        <form action>
+          <div class="budget-form">
+            <!-- Budget Name -->
+            <div class="form-group">
+              <label for="budgetName">Budget Name</label>
+              <input
+                type="text"
+                id="budgetName"
+                placeholder="Enter budget name"
+              />
+            </div>
 
-  <!-- Amount + Currency side by side -->
-  <div class="form-row">
-    <div class="form-group">
-      <label for="amount">Amount</label>
-      <input type="number" id="amount" placeholder="Enter amount">
-    </div>
+            <!-- Amount + Currency side by side -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" placeholder="Enter amount" />
+              </div>
 
-    <div class="form-group">
-      <label for="currency">Currency</label>
-      <select id="currency">
-        <option>United States dollar</option>
-        <option>Euro</option>
-        <option>British Pound</option>
-        <option>Canadian Dollar</option>
-        <option>Australian Dollar</option>
-        <option>Swiss Franc</option>
-        <option>Japanese Yen</option>
-        <option>Chinese Yuan</option>
-        <option>Nigerian naira</option>
-        <option>Cuban peso</option>
-        <option>Swiss franc</option>
-        <option>Kuwait dinar</option>
-        <option>Qatar riyal</option>
-        <option>South African rand</option>
-      </select>
-    </div>
-  </div>
-</div>
-
-                <div class="filter">
-                    <h3 class="heading">Budget Filter</h3>
-                    <label for="" id="categories">Budget for</label>
-                    <select name="All Categories">
-                    <option value="all">All Categories</option>
-                    <option value="beauty">Beauty</option>
-                    <option value="car">Car</option>
-                    <option value="edu">Education</option>
-                    <option value="enjoy">Entertainment</option>
-                    <option value="Fam">Family & Personal</option>
-                    <option value="gifts">Gifts</option>
-                    <option value="grocery">Grocery</option>
-                    <option value="health">Healthcare</option>
-                    <option value="home">Home</option>
-                    <option value="other">Other</option>
-                    <option value="shop">Shopping</option>
-                    <option value="sports">Sports & Hobbies</option>
-                    <option value="transpot">Transport</option>
-                    <option value="travel">Travel</option>
-                    <option value="work">Work</option>
+              <div class="form-group">
+                <label for="currency">Currency</label>
+                <select id="currency">
+                  <option>United States dollar</option>
+                  <option>Euro</option>
+                  <option>British Pound</option>
+                  <option>Canadian Dollar</option>
+                  <option>Australian Dollar</option>
+                  <option>Swiss Franc</option>
+                  <option>Japanese Yen</option>
+                  <option>Chinese Yuan</option>
+                  <option>Nigerian naira</option>
+                  <option>Cuban peso</option>
+                  <option>Swiss franc</option>
+                  <option>Kuwait dinar</option>
+                  <option>Qatar riyal</option>
+                  <option>South African rand</option>
                 </select>
-                </div>
+              </div>
+            </div>
+          </div>
 
-     <div class="period">
-    <h3 class="heading"><i class="feather icon-calendar"></i>Budget Period</h3>
-    <span id="recurrence">Recurrence</span>
-  <div class="recurrence-options">
-  <input type="radio" id="once" name="recurrence" checked>
-  <label for="once">Once</label>
+          <div class="filter">
+            <h3 class="heading">Budget Filter</h3>
+            <label for="" id="categories">Budget for</label>
+            <select name="All Categories">
+              <option value="all">All Categories</option>
+              <option value="beauty">Beauty</option>
+              <option value="car">Car</option>
+              <option value="edu">Education</option>
+              <option value="enjoy">Entertainment</option>
+              <option value="Fam">Family & Personal</option>
+              <option value="gifts">Gifts</option>
+              <option value="grocery">Grocery</option>
+              <option value="health">Healthcare</option>
+              <option value="home">Home</option>
+              <option value="other">Other</option>
+              <option value="shop">Shopping</option>
+              <option value="sports">Sports & Hobbies</option>
+              <option value="transpot">Transport</option>
+              <option value="travel">Travel</option>
+              <option value="work">Work</option>
+            </select>
+          </div>
 
-  <input type="radio" id="daily" name="recurrence">
-  <label for="daily">Daily</label>
+          <div class="period">
+            <h3 class="heading">
+              <i class="feather icon-calendar"></i>Budget Period
+            </h3>
+            <span id="recurrence">Recurrence</span>
+            <div class="recurrence-options">
+              <input type="radio" id="once" name="recurrence" checked />
+              <label for="once">Once</label>
 
-  <input type="radio" id="weekly" name="recurrence">
-  <label for="weekly">Weekly</label>
+              <input type="radio" id="daily" name="recurrence" />
+              <label for="daily">Daily</label>
 
-  <input type="radio" id="biweekly" name="recurrence">
-  <label for="biweekly">Biweekly</label>
+              <input type="radio" id="weekly" name="recurrence" />
+              <label for="weekly">Weekly</label>
 
-  <input type="radio" id="monthly" name="recurrence">
-  <label for="monthly">Monthly</label>
+              <input type="radio" id="biweekly" name="recurrence" />
+              <label for="biweekly">Biweekly</label>
 
-  <input type="radio" id="yearly" name="recurrence">
-  <label for="yearly">Yearly</label>
-  </div>
+              <input type="radio" id="monthly" name="recurrence" />
+              <label for="monthly">Monthly</label>
 
-    <label for="" id="startdate">Start Date</label>
-    <input type="date" id="date" required>
-  <button id="create">Create a New Budget</button>
-</div>
-            </form>
-        </div>
+              <input type="radio" id="yearly" name="recurrence" />
+              <label for="yearly">Yearly</label>
+            </div>
+
+            <label for="" id="startdate">Start Date</label>
+            <input type="date" id="date" required />
+            
+          </div>
+          <button id="create" class="btns">Create a New Budget</button>
+        </form>
+      </div>
+      </div>
     </div>
+  </main>
   </body>
+</html>

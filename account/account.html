@@ -1,81 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Account Settings</title>
-  <link rel="stylesheet" href="account.css" />
-  <link href="../assets/images/fin-app-logo.jpg" rel="icon" type="image/png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinTracker</title>
+    <link rel="stylesheet" href="../css/card.css" />
+    <link
+      href="../assets/images/fin-app-logo.jpg"
+      rel="icon"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../script.js" defer></script>
+    <link rel="stylesheet" href="account.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script type="module" src="../dashboard page/dashboard.js"></script>
+  </head>
+  <body>
+     <header class="header">
+      <div class="flex-btw nav">
+        <!-- fin app logo -->
+        <div>
+          <a href="./account.html"
+            ><img
+              src="../assets/images/fin-app-logo.jpg"
+              alt="logo"
+              width="50px"
+          /></a>
+        </div>
+        <!-- Nav link for dashboard and budget -->
+        <ul class="flex-center-lg navlink">
+          <li>
+            <a href="../dashboard page/dashboard.html">Dashboard</a>
+          </li>
+          <li>
+            <a href="../budget page/budget.html">Budget</a>
+          </li>
+        </ul>
+        <!-- user image and clickable items -->
+        <div class="menu">
+          <div>
+            <button class="btn flex-center-sm">
+              <img
+                src="../assets/images/Jerome Bell.png"
+                alt="user"
+                width="40px"
+                class="user"
+              />
+              <img
+                src="../assets/images/down-arrow.png"
+                alt="dropdown-icon"
+                width="25px"
+              />
+            </button>
+          </div>
+          <!-- links which shows when you hover on user image -->
+          <div class="hidden flex-col">
+            <div class="subcard">
+              <p>Precious James</p>
+              <p>preciousjames@gmail.com</p>
+            </div>
+            <ul class="flex-col">
+              <div>
+                <li>
+                  <div class="settings-menu">
+                    <a href="#" class="flex-btw">
+                      Settings
+                      <img
+                        src="../assets/images/down-arrow.png"
+                        alt="dropdown-icon"
+                        width="20px"
+                      />
+                    </a>
+                    <div class="hid">
+                      <div class="flex-col">
+                        <a href="../account/account.html">Account</a>
+                        <a href="../categories/category.html">All Categories</a>
+                        <a href="../html/card.html">Connected Bank Account</a>
+                        <a href="../support/support.html">Support</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </div>
+              <li>
+                <a href="../index.html">Log-out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- mobile navlinks -->
+        <div class="mobile-menu">
+          <div>
+            <button class="btn menu-btn">
+              <img
+                src="../assets/images/menu.png"
+                alt="dropdown-icon"
+                width="30px"
+                class="menu-icon"
+              />
+            </button>
+          </div>
 
- <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-         <script type="module" src="../dashboard page/dashboard.js"></script>
-
-</head>
-<body>
-    
-  <div class="container">
-    <h2>Account Settings</h2>
-    <div class="profile-photo">
-      <img src="https://via.placeholder.com/90" alt="Profile Photo" />
-      <br />
-      <label for="upload" class="upload-btn">Upload Avatar</label>
-      <input type="file" id="upload" accept="image/*" />
-    </div>
-
-    <form>
-      <div class="form-group">
-        <label>First Name</label>
-        <input type="text" placeholder="Enter first name" required />
+          <div class="sidebar">
+            <div class="sidebar-link">
+              <div class="flex-center-sm user-mobile">
+                <img
+                  src="../assets/images/Jerome Bell.png"
+                  alt="user"
+                  width="40px"
+                  class="user"
+                />
+                <p>Precious James</p>
+              </div>
+              <ul class="flex-col">
+                <li>
+                  <a href="../dashboard page/dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                  <a href="../budget page/budget.html">Budget</a>
+                </li>
+                <div>
+                  <li>
+                    <div id="settings-menu">
+                      <a href="#" class="flex-btw">
+                        Settings
+                        <img
+                          src="../assets/images/down-arrow.png"
+                          alt="dropdown-icon"
+                          width="20px"
+                        />
+                      </a>
+                      <div id="hid">
+                        <div class="flex-col">
+                          <a href="../account/account.html">Account</a>
+                          <a href="../categories/category.html">All Categories</a>
+                          <a href="../html/card.html">Connected Bank Account</a>
+                          <a href="../support/support.html">Support</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+                <li>
+                  <a href="../index.html">Log-out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+    </header>
+    <main>
+      <div class="container">
+        <h2>Account Settings</h2>
+        <div class="profile-photo">
+          <img src="https://via.placeholder.com/90" alt="Profile Photo" />
+          <br />
+          <label for="upload" class="upload-btn">Upload Avatar</label>
+          <input type="file" id="upload" accept="image/*" />
+        </div>
 
-      <div class="form-group">
-        <label>Last Name</label>
-        <input type="text" placeholder="Enter last name" required />
+        <form>
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Enter first name" required />
+          </div>
+
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Enter last name" required />
+          </div>
+
+          <div class="form-group">
+            <label>Sex</label>
+            <select>
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" />
+          </div>
+
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter email" required />
+          </div>
+
+          <div class="form-group">
+            <label>Account Currency</label>
+            <select>
+              <option value="USD">USD</option>
+              <option value="NGN">NGN</option>
+              <option value="EUR">EUR</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Language</label>
+            <select>
+              <option value="english">English</option>
+              <option value="french">French</option>
+              <option value="spanish">Spanish</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btns">Update My Settings</button>
+          <a href="#" class="delete-link">Delete Account</a>
+        </form>
       </div>
-
-      <div class="form-group">
-        <label>Sex</label>
-        <select>
-          <option value="">Select</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Date of Birth</label>
-        <input type="date" />
-      </div>
-
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="Enter email" required />
-      </div>
-
-      <div class="form-group">
-        <label>Account Currency</label>
-        <select>
-          <option value="USD">USD</option>
-          <option value="NGN">NGN</option>
-          <option value="EUR">EUR</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Language</label>
-        <select>
-          <option value="english">English</option>
-          <option value="french">French</option>
-          <option value="spanish">Spanish</option>
-        </select>
-      </div>
-
-      <button type="submit" class="btn">Update My Settings</button>
-      <a href="#" class="delete-link">Delete Account</a>
-    </form>
-  </div>
-</body>
+    </main>
+  </body>
 </html>

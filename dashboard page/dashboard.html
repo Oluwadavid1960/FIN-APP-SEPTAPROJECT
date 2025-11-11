@@ -1,84 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="expense tracker, budget help,">  
-    <meta name="description" content="The modern app that help you prepare your budget limit, track your monthly expenses and mitigate financial risk.">
-    <title>Document</title> 
-    <link rel="stylesheet" href="../dashboard page/dashboard.css">
-    <script src="../dashboard page/dashboard.js" defer></script>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-         rel="stylesheet">
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-         <script type="module" src="../dashboard page/dashboard.js"></script>
-         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="keywords" content="expense tracker, budget help," />
+    <meta
+      name="description"
+      content="The modern app that help you prepare your budget limit, track your monthly expenses and mitigate financial risk."
+    />
+    <title>FinTracker</title>
+    <link rel="stylesheet" href="./dashboard.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../assets/images/fin-app-logo.jpg" rel="icon" type="image/png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../script.js" defer></script>
+    <script type="module" src="./dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="./dashboard.js" defer></script>
   </head>
   <body>
-      <nav class="navbar">
-    <div class="logo">
-      <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="FinTracker logo" />
-      <span>FinTracker</span>
-    </div>
-    <div class="nav-links">
-      <a href="#" class="active">Dashboard</a>
-      <a href="#">Budgets</a>
-    </div>
-    <div class="user-icon">👤</div>
-  </nav>
-
-  <main class="main-container">
-    <section class="wallets-section">
-      <h3>Wallets</h3>
-      <div class="wallet-card">
-        <div class="wallet-info">
-          <img src="https://cdn-icons-png.flaticon.com/512/2769/2769001.png" alt="Wallet icon" />
+    <!-- static navbar header for the  website -->
+    <header class="header">
+      <div class="flex-btw nav">
+        <!-- fin app logo -->
+        <div>
+          <a href="./dashboard.html"
+            ><img
+              src="../assets/images/fin-app-logo.jpg"
+              alt="logo"
+              width="50px"
+          /></a>
+        </div>
+        <!-- Nav link for dashboard and budget -->
+        <ul class="flex-center-lg navlink">
+          <li>
+            <a href="./dashboard.html">Dashboard</a>
+          </li>
+          <li>
+            <a href="../budget page/budget.html">Budget</a>
+          </li>
+        </ul>
+        <!-- user image and clickable items -->
+        <div class="menu">
           <div>
-            <p class="wallet-name">Cash Wallet</p>
-            <p class="wallet-type">Cash</p>
+            <button class="btn flex-center-sm">
+              <img
+                src="../assets/images/Jerome Bell.png"
+                alt="user"
+                width="40px"
+                class="user"
+              />
+              <img
+                src="../assets/images/down-arrow.png"
+                alt="dropdown-icon"
+                width="25px"
+              />
+            </button>
+          </div>
+          <!-- links which shows when you hover on user image -->
+          <div class="hidden flex-col">
+            <div class="subcard">
+              <p>Precious James</p>
+              <p>preciousjames@gmail.com</p>
+            </div>
+            <ul class="flex-col">
+              <div>
+                <li>
+                  <div class="settings-menu">
+                    <a href="#" class="flex-btw">
+                      Settings
+                      <img
+                        src="../assets/images/down-arrow.png"
+                        alt="dropdown-icon"
+                        width="20px"
+                      />
+                    </a>
+                    <div class="hid">
+                      <div class="flex-col">
+                        <a href="../account/account.html">Account</a>
+                        <a href="../categories/category.html">All Categories</a>
+                        <a href="../html/card.html">Connected Bank Account</a>
+                        <a href="../support/support.html">Support</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </div>
+              <li>
+                <a href="../index.html">Log-out</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <p class="wallet-balance">₦0.00</p>
-      </div>
+        <!-- mobile navlinks -->
+        <div class="mobile-menu">
+          <div>
+            <button class="btn menu-btn">
+              <img
+                src="../assets/images/menu.png"
+                alt="dropdown-icon"
+                width="30px"
+                class="menu-icon"
+              />
+            </button>
+          </div>
 
-      <div class="wallet-actions">
-        <button class="add-wallet">Add New Wallet</button>
-        <button class="connect-bank">Connect a Bank Account</button>
-      </div>
-    </section>
-
-    <section class="overview-section">
-      <h3>Overview</h3>
-      <div class="overview-controls">
-        <div class="date-range">
-          <input type="date" id="start-date" value="2025-11-01">
-          <span>—</span>
-          <input type="date" id="end-date" value="2025-11-30">
+          <div class="sidebar">
+            <div class="sidebar-link">
+              <div class="flex-center-sm user-mobile">
+                <img
+                  src="../assets/images/Jerome Bell.png"
+                  alt="user"
+                  width="40px"
+                  class="user"
+                />
+                <p>Precious James</p>
+              </div>
+              <ul class="flex-col">
+                <li>
+                  <a href="./dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                  <a href="../budget page/budget.html">Budget</a>
+                </li>
+                <div>
+                  <li>
+                    <div id="settings-menu">
+                      <a href="#" class="flex-btw">
+                        Settings
+                        <img
+                          src="../assets/images/down-arrow.png"
+                          alt="dropdown-icon"
+                          width="20px"
+                        />
+                      </a>
+                      <div id="hid">
+                        <div class="flex-col">
+                          <a href="../account/account.html">Account</a>
+                          <a href="../categories/category.html">All Categories</a>
+                          <a href="../html/card.html">Connected Bank Account</a>
+                          <a href="../support/support.html">Support</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+                <li>
+                  <a href="../index.html">Log-out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="overview-cards">
-        <div class="overview-card">
-          <p>Total Balance</p>
-          <h2>₦0.00</h2>
+    </header>
+    <main class="main-container">
+      <section class="wallets-section">
+        <h3>Wallets</h3>
+        <div class="wallet-card">
+          <div class="wallet-info">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2769/2769001.png"
+              alt="Wallet icon"
+            />
+            <div>
+              <p class="wallet-name">Cash Wallet</p>
+              <p class="wallet-type">Cash</p>
+            </div>
+          </div>
+          <p class="wallet-balance">₦0.00</p>
         </div>
-        <div class="overview-card">
-          <p>Total Period Change</p>
-          <h2>₦0.00</h2>
+
+        <div class="wallet-actions">
+          <button class="add-wallet">Add New Wallet</button>
+          <button class="connect-bank">Connect a Bank Account</button>
         </div>
-      </div>
+      </section>
 
-      <div class="empty-state">
-        <img src="https://cdn-icons-png.flaticon.com/512/3472/3472620.png" alt="No transactions" />
-        <p>You have no transactions.</p>
-      </div>
-    </section>
-  </main>
+      <section class="overview-section">
+        <h3>Overview</h3>
+        <div class="overview-controls">
+          <div class="date-range">
+            <input type="date" id="start-date" value="2025-11-01" />
+            <span>—</span>
+            <input type="date" id="end-date" value="2025-11-30" />
+          </div>
+        </div>
 
-  <footer class="footer">
-    <p>©2025 FinTracker | All rights reserved</p>
-  </footer>
+        <div class="overview-cards">
+          <div class="overview-card">
+            <p>Total Balance</p>
+            <h2>₦0.00</h2>
+          </div>
+          <div class="overview-card">
+            <p>Total Period Change</p>
+            <h2>₦0.00</h2>
+          </div>
+        </div>
+
+        <div class="empty-state">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3472/3472620.png"
+            alt="No transactions"
+          />
+          <p>You have no transactions.</p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>©2025 FinTracker | All rights reserved</p>
+    </footer>
   </body>
 </html>

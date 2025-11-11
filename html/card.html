@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Account</title>
+    <title>FinTracker</title>
     <link rel="stylesheet" href="../css/card.css">
-    <script src="../javascript/card.js" defer></script>
+    <link href="../assets/images/fin-app-logo.jpg" rel="icon" type="image/png" />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../script.js" defer></script>
 </head>
 <body>
         <!-- static navbar header for the  website -->
@@ -13,9 +15,9 @@
       <div class="flex-btw nav">
         <!-- fin app logo -->
         <div>
-          <a href="index.html"
+          <a href="./card.html"
             ><img
-              src="./assets/images/fin-app-logo.jpg"
+              src="../assets/images/fin-app-logo.jpg"
               alt="logo"
               width="50px"
           /></a>
@@ -23,10 +25,10 @@
         <!-- Nav link for dashboard and budget -->
         <ul class="flex-center-lg navlink">
           <li>
-            <a href="index.html">Dashboard</a>
+            <a href="../dashboard page/dashboard.html">Dashboard</a>
           </li>
           <li>
-            <a href="index.html">Budget</a>
+            <a href="../budget page/budget.html">Budget</a>
           </li>
         </ul>
         <!-- user image and clickable items -->
@@ -34,13 +36,13 @@
           <div>
             <button class="btn flex-center-sm">
               <img
-                src="./assets/images/Jerome Bell.png"
+                src="../assets/images/Jerome Bell.png"
                 alt="user"
                 width="40px"
                 class="user"
               />
               <img
-                src="./assets/images/down-arrow.png"
+                src="../assets/images/down-arrow.png"
                 alt="dropdown-icon"
                 width="25px"
               />
@@ -59,24 +61,24 @@
                     <a href="#" class="flex-btw">
                       Settings
                       <img
-                        src="./assets/images/down-arrow.png"
+                        src="../assets/images/down-arrow.png"
                         alt="dropdown-icon"
                         width="20px"
                       />
                     </a>
                     <div class="hid">
                       <div class="flex-col">
-                        <a href="index.html">Account</a>
-                        <a href="index.html">All Categories</a>
-                        <a href="./html/card.html">Connected Bank Acc.</a>
-                        <a href="index.html">Support</a>
+                        <a href="../account/account.html">Account</a>
+                        <a href="../categories/category.html">All Categories</a>
+                        <a href="./card.html">Connected Bank Account</a>
+                        <a href="../support/support.html">Support</a>
                       </div>
                     </div>
                   </div>
                 </li>
               </div>
               <li>
-                <a href="index.html">Log-out</a>
+                <a href="../index.html">Log-out</a>
               </li>
             </ul>
           </div>
@@ -86,7 +88,7 @@
           <div>
             <button class="btn menu-btn">
               <img
-                src="./assets/images/menu.png"
+                src="../assets/images/menu.png"
                 alt="dropdown-icon"
                 width="30px"
                 class="menu-icon"
@@ -98,7 +100,7 @@
             <div class="sidebar-link">
               <div class="flex-center-sm user-mobile">
                 <img
-                  src="./assets/images/Jerome Bell.png"
+                  src="../assets/images/Jerome Bell.png"
                   alt="user"
                   width="40px"
                   class="user"
@@ -107,10 +109,10 @@
               </div>
               <ul class="flex-col">
                 <li>
-                  <a href="index.html">Dashboard</a>
+                  <a href="../dashboard page/dashboard.html">Dashboard</a>
                 </li>
                 <li>
-                  <a href="index.html">Budget</a>
+                  <a href="../budget page/budget.html">Budget</a>
                 </li>
                 <div>
                   <li>
@@ -118,24 +120,24 @@
                       <a href="#" class="flex-btw">
                         Settings
                         <img
-                          src="./assets/images/down-arrow.png"
+                          src="../assets/images/down-arrow.png"
                           alt="dropdown-icon"
                           width="20px"
                         />
                       </a>
                       <div id="hid">
                         <div class="flex-col">
-                          <a href="index.html">Account</a>
-                          <a href="index.html">All Categories</a>
-                          <a href="./html/card.html">Connected Bank Acc.</a>
-                          <a href="index.html">Support</a>
+                          <a href="../account/account.html">Account</a>
+                          <a href="../categories/category.html">All Categories</a>
+                          <a href="./card.html">Connected Bank Account</a>
+                          <a href="../support/support.html">Support</a>
                         </div>
                       </div>
                     </div>
                   </li>
                 </div>
                 <li>
-                  <a href="index.html">Log-out</a>
+                  <a href="../index.html">Log-out</a>
                 </li>
               </ul>
             </div>
@@ -143,11 +145,13 @@
         </div>
       </div>
     </header>
+    <main>
     <h3>Connected Account</h3>
     <div class="card">
         <img src="../assets/images/mastercard.png" alt="">
         <h2>Connect your bank account to get your transactions automatically downloaded to fin-app and categorised</h2>
-        <button>connect an account</button>
+        <button>Connect an account</button>
     </div>
+  </main>
 </body>
 </html>

@@ -17,6 +17,6 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     }
   
     alert(`Welcome to FinTracker, ${name}! Your account has been created successfully.`);
-    window.location.href = "index.html"; // Redirect to login page
+    window.location.href = "../index.html"; // Redirect to login page
   });
   

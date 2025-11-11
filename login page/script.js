@@ -10,6 +10,6 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   
     // Simulated login
     alert(`Welcome back! ${email}!`);
-    window.location.href = "dashboard.html"; // redirect example
+    window.location.href = "./dashboard page/dashboard.html"; // redirect example
   });
   

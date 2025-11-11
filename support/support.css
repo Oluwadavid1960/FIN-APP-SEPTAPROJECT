@@ -1,27 +1,25 @@
-body {
-  font-family: "Inter", sans-serif;
-  background-color: #f3f6f8;
+main {
+  font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding-top: 50px;
   margin: 0;
 }
 
 .contact-container {
-  background: white;
   padding: 30px;
   border-radius: 10px;
-  width: 90%;
+  margin-inline: 15px;
+  width: 100%;
   max-width: 400px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .contact-container h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #adebb3;
+  color: #2b7a78;
 }
 
 form {
@@ -51,7 +49,7 @@ textarea:focus {
   outline: none;
 }
 
-button {
+.btns {
   background-color: #2b7a78;
   color: white;
   border: none;
@@ -62,6 +60,6 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+.btns:hover {
   background-color: #205f5a;
 }

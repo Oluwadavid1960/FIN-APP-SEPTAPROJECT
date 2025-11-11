@@ -1,4 +1,4 @@
-body {
+main {
   font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
@@ -11,12 +11,14 @@ body {
 .container {
   background: #fff;
   width: 100%;
+  margin-inline: 15px;
   max-width: 500px;
-  margin-top: 60px;
+  margin-block: 60px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 30px 25px;
 }
+
 h2 {
   font-size: 22px;
   color: #205f5a;
@@ -55,6 +57,11 @@ h2 {
 #upload {
   display: none;
 }
+
+form {
+  padding-inline: 20px;
+}
+
 .form-group {
   margin-bottom: 16px;
 }
@@ -69,7 +76,7 @@ label {
 input,
 select {
   width: 100%;
-  padding: 10px;
+  padding-block: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
@@ -81,7 +88,7 @@ input:focus,
 select:focus {
   border-color: #2b7a78;
 }
-.btn {
+.btns {
   width: 100%;
   padding: 12px;
   background-color: #2b7a78;
@@ -93,7 +100,7 @@ select:focus {
   transition: background-color 0.3s;
 }
 
-.btn:hover {
+.btns:hover {
   background-color: #205f5a;
 }
 

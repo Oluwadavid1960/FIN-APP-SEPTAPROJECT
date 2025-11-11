@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinTracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="./category.css">
+   <link href="./assets/images/fin-app-logo.jpg" rel="icon" type="image/png" />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+      <div class="flex-btw nav">
+        <!-- fin app logo -->
+        <div>
+          <a href="./category.html"
+            ><img
+              src="../assets/images/fin-app-logo.jpg"
+              alt="logo"
+              width="50px"
+          /></a>
+        </div>
+        <!-- Nav link for dashboard and budget -->
+        <ul class="flex-center-lg navlink">
+          <li>
+            <a href="../dashboard page/dashboard.html">Dashboard</a>
+          </li>
+          <li>
+            <a href="../budget page/budget.html">Budget</a>
+          </li>
+        </ul>
+        <!-- user image and clickable items -->
+        <div class="menu">
+          <div>
+            <button class="btn flex-center-sm">
+              <img
+                src="../assets/images/Jerome Bell.png"
+                alt="user"
+                width="40px"
+                class="user"
+              />
+              <img
+                src="../assets/images/down-arrow.png"
+                alt="dropdown-icon"
+                width="25px"
+              />
+            </button>
+          </div>
+          <!-- desktoplinks which shows when you hover on user image -->
+          <div class="hidden flex-col">
+            <div class="subcard">
+              <p>Precious James</p>
+              <p>preciousjames@gmail.com</p>
+            </div>
+            <ul class="flex-col">
+              <div>
+                <li>
+                  <div class="settings-menu">
+                    <a href="#" class="flex-btw">
+                      Settings
+                      <img
+                        src="../assets/images/down-arrow.png"
+                        alt="dropdown-icon"
+                        width="20px"
+                      />
+                    </a>
+                    <div class="hid">
+                      <div class="flex-col">
+                        <a href="../account/account.html">Account</a>
+                        <a href="./category.html">All Categories</a>
+                        <a href="../html/card.html">Connected Bank Account</a>
+                        <a href="../support/support.html">Support</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </div>
+              <li>
+                <a href="../index.html">Log-out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- mobile navlinks -->
+        <div class="mobile-menu">
+          <div>
+            <button class="btn menu-btn">
+              <img
+                src="../assets/images/menu.png"
+                alt="dropdown-icon"
+                width="30px"
+                class="menu-icon"
+              />
+            </button>
+          </div>
+
+          <div class="sidebar">
+            <div class="sidebar-link">
+              <div class="flex-center-sm user-mobile">
+                <img
+                  src="../assets/images/Jerome Bell.png"
+                  alt="user"
+                  width="40px"
+                  class="user"
+                />
+                <p>Precious James</p>
+              </div>
+              <ul class="flex-col">
+                <li>
+                  <a href="../dashboard page/dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                  <a href="../budget page/budget.html">Budget</a>
+                </li>
+                <div>
+                  <li>
+                    <div id="settings-menu">
+                      <a href="#" class="flex-btw">
+                        Settings
+                        <img
+                          src="../assets/images/down-arrow.png"
+                          alt="dropdown-icon"
+                          width="20px"
+                        />
+                      </a>
+                      <div id="hid">
+                        <div class="flex-col">
+                          <a href="../account/account.html">Account</a>
+                          <a href="./category.html">All Categories</a>
+                          <a href="../html/card.html">Connected Bank Account</a>
+                          <a href="../support/support.html">Support</a>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+                <li>
+                  <a href="../index.html">Log-out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  <main>
+  <div class="container">
+    <h2>Create a new category</h2>
+    <div class="category-section">
+      <div class="form-row">
+        <div>
+          <label>Icon</label>
+          <select>
+            <option>$</option>
+            <option></option>
+          </select>
+        </div>
+
+        <div>
+          <label>Color</label>
+          <input type="color" />
+        </div>
+
+        <div>
+          <label>Name</label>
+          <input type="text" placeholder="New category name" />
+        </div>
+
+        <div>
+          <label>Type</label>
+          <select>
+            <option>Expense</option>
+            <option>Income</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="manage-section">
+      <button>Merge categories</button>
+      <button>Delete categories</button>
+    </div>
+
+    <h4>Income categories</h4>
+    <ul class="categories-list">
+      <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-briefcase-fill" style="color:#f39c12;"></i> Business</div>
+        <div class="transactions">0 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+      </li>
+      <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-money-dollar-circle-fill" style="color:#27ae60;"></i> Extra Income</div>
+        <div class="transactions">0 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+      </li>
+      <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-gift-fill" style="color:#9b59b6;"></i> Gifts</div>
+        <div class="transactions">1 transaction</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+      </li>
+      <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-shield-user-line" style="color: blue;"></i> Insurance Payout</div>
+        <div class="transactions">10 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+    <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-bank-fill" style="color: #e74c3c;"></i> Loan</div>
+        <div class="transactions">0 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+    <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-cash-fill" style="color: lightgrey;"></i> Other</div>
+        <div class="transactions">5 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+    <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-parent-fill" style="color: palevioletred;"></i> Parental Leave</div>
+        <div class="transactions">4 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+    <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-money-dollar-circle-fill" style="color: green;"></i> Salary</div>
+        <div class="transactions">2 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+      </li>
+    </ul>
+
+    <h4>Expense categories</h4>
+    <ul class="categories-list">
+      <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-star-smile-fill" style="color:#9b59b6;"></i> Beauty</div>
+        <div class="transactions">0 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+      </li>
+      <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-restaurant-fill" style="color:#27ae60"></i>Food and Drink</div>
+        <div class="transactions">2 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+      </li>
+      <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-car-fill" style="color:#2980b9;"></i> Car</div>
+        <div class="transactions">3 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+      </li>
+      <li class="categories-item">
+        <input type="checkbox">
+        <div class="name"><i class="ri-graduation-cap-fill" style="color:#34495e;"></i> Education</div>
+        <div class="transactions">0 transactions</div>
+        <div class="actions">
+          <button class="btn btn-edit"><i class="ri-settings-4-line"></i></button>
+          <button class="btn btn-delete"><i class="ri-delete-bin-line"></i></button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</main>
+</body>
+</html>

@@ -216,7 +216,7 @@
   
   @media (max-width: 768px) {
     .main-container {
-      padding: 20px;
+      padding:30px;
     }
     .overview-cards {
       flex-direction: column;

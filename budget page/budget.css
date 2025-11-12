@@ -4,7 +4,6 @@ main{
   margin: 0px auto;
   padding:15px 55px;
   overflow-x: hidden;
-
 }
 
 .folder{
@@ -243,7 +242,11 @@ input[type="date"]{
 }
 
 @media (max-width: 640px) {
+ main{
+
+  padding:15px 30px;
  
+}
   .modal-content {
   width: 70%;
    max-width: 300px;

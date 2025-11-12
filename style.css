@@ -163,14 +163,12 @@ header {
 }
 
 ul,
-a,
-li {
+li,a {
   list-style: none;
   text-decoration: none;
   padding: 0px 0px;
   margin: 0px 0px;
   color: black;
-  opacity: 0.9;
 }
 
 ul li a:hover {

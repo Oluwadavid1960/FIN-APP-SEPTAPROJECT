@@ -145,7 +145,7 @@ h4 {
   background: #fbd1cd;
 }
 
-#save-btn{
+button, #save-btn{
   background-color:#ACFFAC
   color: white;
   display: flex;

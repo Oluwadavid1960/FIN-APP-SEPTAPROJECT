@@ -175,6 +175,29 @@ input:focus {
   gap:6px;
 }
 
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px; /* space for icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
+
 @media (max-width: 480px) {
   .login-box {
     width: 90%;

@@ -151,6 +151,7 @@ h4 {
   display: flex
 justify-items: flex-start
 /* margin-right: 80px */
+}
 
 /* Responsive layout */
 @media (max-width: 768px) {

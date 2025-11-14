@@ -149,7 +149,7 @@ h4 {
   background: #ACFFAC
     color: white
   display: flex
-justify-items: flex-end
+justify-items: flex-start
 /* margin-right: 80px */
 
 /* Responsive layout */

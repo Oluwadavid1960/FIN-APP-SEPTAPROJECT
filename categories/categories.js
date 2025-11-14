@@ -13,3 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function formatAmount(input) {
+    // Remove all non-digit characters
+    let value = input.value.replace(/\D/g, "");
+
+    // Format with commas
+    value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    // Update input
+    input.value = value;
+}

@@ -168,8 +168,10 @@ input:focus {
   text-decoration: none;
 }
 
-.remember{
+#remember{
   display: flex;
+  float-direction: left;
+  justify-self: left;
   gap:6px;
 }
 

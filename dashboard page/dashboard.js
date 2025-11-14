@@ -46,15 +46,15 @@ function logout() {
     // fetch("/logout").then(() => window.location.href = "/login");
 }
 
-// Detect user activity
-window.onload = () => {
-    resetIdleTimer();
+// // Detect user activity
+// window.onload = () => {
+//     resetIdleTimer();
 
-    // Activity types
-    window.addEventListener("mousemove", resetIdleTimer);
-    window.addEventListener("keydown", resetIdleTimer);
-    window.addEventListener("click", resetIdleTimer);
-    window.addEventListener("scroll", resetIdleTimer);
-    window.addEventListener("touchstart", resetIdleTimer);
-};
+//     // Activity types
+//     window.addEventListener("mousemove", resetIdleTimer);
+//     window.addEventListener("keydown", resetIdleTimer);
+//     window.addEventListener("click", resetIdleTimer);
+//     window.addEventListener("scroll", resetIdleTimer);
+//     window.addEventListener("touchstart", resetIdleTimer);
+// };
   

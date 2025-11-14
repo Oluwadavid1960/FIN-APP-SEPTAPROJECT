@@ -145,13 +145,11 @@ h4 {
   background: #fbd1cd;
 }
 
-.save button{
-  background-color: #ACFFAC
-    color: white
-  display: flex
-flex-direction: right;
-justify-items: flex-end
-margin-right: 40px
+button{
+  background-color:#ACFFAC
+  color: white;
+  display: flex;
+  flex-direction: right;
 }
 
 /* Responsive layout */

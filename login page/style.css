@@ -168,6 +168,11 @@ input:focus {
   text-decoration: none;
 }
 
+.remember{
+  display: flex;
+  gap:6px;
+}
+
 @media (max-width: 480px) {
   .login-box {
     width: 90%;

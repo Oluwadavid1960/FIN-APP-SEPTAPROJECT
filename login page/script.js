@@ -13,14 +13,14 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     window.location.href = "./dashboard page/dashboard.html"; // redirect example
   });
 
-// const passwordInput = document.getElementById("password");
-// const toggle = document.getElementById("togglePassword");
+const passwordInput = document.getElementById("password");
+const toggle = document.getElementById("togglePassword");
 
-// toggle.addEventListener("click", () => {
-//     const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
-//     passwordInput.setAttribute("type", type);
+toggle.addEventListener("click", () => {
+    const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+    passwordInput.setAttribute("type", type);
 
-//     // Change icon
-//     toggle.textContent = type === "password" ? "👁" : "🙈";
-// });
+    // Change icon
+    toggle.textContent = type === "password" ? "👁" : "🙈";
+});
   

@@ -37,8 +37,8 @@
  gap:6px;
     width:var(--size);
     height:var(--size);
-    display:inline-grid;
-    place-items:center;
+    display:flex;
+ flex-direction: right;
     border-radius:10px;
     background:linear-gradient(180deg,rgba(255,255,255,0.03),transparent);
     border:1px solid rgba(15,23,42,0.06);

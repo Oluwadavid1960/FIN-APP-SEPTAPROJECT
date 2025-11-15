@@ -33,7 +33,8 @@
         }
 
 .theme-toggle{
-    --size:44px;
+    --size:28px;
+ gap:6px;
     width:var(--size);
     height:var(--size);
     display:inline-grid;

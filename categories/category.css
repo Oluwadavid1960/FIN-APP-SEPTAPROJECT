@@ -58,19 +58,19 @@ input[type="text"] {
 }
 
 .manage-section button {
-  background: #e9eff6;
+  background: #B2FFFC;
   border: none;
   gap: 5px;
   padding: 8px 14px;
   margin-right: 10px;
   border-radius: 6px;
-  color: #555;
+  color: white;
   cursor: pointer;
   font-weight: 500;
 }
 
 .manage-section button:hover {
-  background: #d9e6f5;
+  background: #ACFFAC;
 }
 
 h4 {

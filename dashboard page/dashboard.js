@@ -114,27 +114,7 @@ window.onload = () => {
     setDark(prefersDark);
   }
 
-  // Toggle on click
-  toggleBtn.addEventListener('click', ()=>{
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    setDark(!isDark);
-    localStorage.setItem('theme', !isDark ? 'dark' : 'light');
-  });
-
-  // Keyboard shortcut: press "D" (case-insensitive)
-  window.addEventListener('keydown', (e)=>{
-    if(e.key && e.key.toLowerCase() === 'd' && !/input|textarea|select/i.test(document.activeElement.tagName)){
-      toggleBtn.click();
-    }
-  });
-    
-    //Optional: respond to system theme changes if user hasn't explicitly chosen
-  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)=>{
-    if(!localStorage.getItem('theme')) {
-      setDark(e.matches);
-    }
-  });
-})();
+  
 
 
   

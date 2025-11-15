@@ -82,45 +82,7 @@ window.onload = () => {
     window.addEventListener("touchstart", resetIdleTimer);
 };
 
-(function(){
-  const root = document.documentElement;
-  const toggleBtn = document.getElementById('themeToggle');
-  const iconPath = document.getElementById('iconPath');
-
-  // helpers
-  function setDark(dark){
-    if(dark){
-      root.setAttribute('data-theme','dark');
-      toggleBtn.setAttribute('aria-pressed','true');
-      // moon icon (simpler path for clarity)
-      iconPath.setAttribute('d','M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z');
-    } else {
-      root.removeAttribute('data-theme');
-      toggleBtn.setAttribute('aria-pressed','false');
-      // sun icon
-      iconPath.setAttribute('d','M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4M12 7a5 5 0 100 10 5 5 0 000-10z');
-    }
-  }
-
-// Read saved preference
-  const saved = localStorage.getItem('theme'); // 'dark' | 'light' or null
-  if(saved === 'dark') {
-    setDark(true);
-  } else if(saved === 'light') {
-    setDark(false);
-  } else {
-    // follow system preference (initial paint handled by CSS via prefers-color-scheme)
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setDark(prefersDark);
-  }
-
-    const toggle = document.getElementById("darkModeToggle");
-toggle.addEventListener("change", () => 
-{
-    document.body.classList.toggle("dark", toggle.checked);
-});
-  
-/*
+ /*
      Simple theme toggler:
      - Uses document.documentElement.dataset.theme = "dark" or removed for light
      - Persists choice to localStorage under 'theme' key
@@ -143,7 +105,7 @@ toggle.addEventListener("change", () =>
       } else {
         root.removeAttribute('data-theme');
         toggleBtn.setAttribute('aria-pressed','false');
-        themeIcon.textContent = '☀';
+        themeIcon.textContent = '☀️';
         themeLabel.textContent = 'Light';
       }
       currentThemeText.textContent = name || 'system';
@@ -177,5 +139,3 @@ toggle.addEventListener("change", () =>
         currentThemeText.textContent = 'system (' + (e.matches ? 'dark' : 'light') + ')';
       }
     });
-
-  

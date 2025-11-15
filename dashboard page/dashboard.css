@@ -31,22 +31,6 @@
             width: 100%;
             height: 400px;
         }
-
-.theme-toggle{
-    --size:28px;
-     gap:6px;
-    display:inline-flex;
- justify-self: flex-end;
-    border-radius:10px;
-    background:linear-gradient(180deg,rgba(255,255,255,0.03),transparent);
-    border:1px solid rgba(15,23,42,0.06);
-    cursor:pointer;
-    transition:transform 160ms ease, background var(--transition);
-  }
-  .theme-toggle:active{transform:scale(.98)}
-  .theme-toggle[aria-pressed="true"]{
-    outline:2px solid rgba(79,143,255,0.18);
-  }
 /*   
   .top-banner {
     background-color: #00bfa6;

@@ -11,7 +11,9 @@
     />
     <title>FinTracker</title>
     <link rel="stylesheet" href="./dashboard.css" />
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../chart/chart.css">
+    <script src="../chart/chart.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -218,6 +220,14 @@
           />
           <p>You have no transactions.</p>
         </div>
+
+        <div class="dashboard-container">
+        <h2>Dashboard Chart Example</h2>
+
+        <div class="chart-box">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
       </section>
     </main>
     <footer class="footer">

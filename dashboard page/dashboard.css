@@ -34,15 +34,12 @@
 
 .theme-toggle{
     --size:28px;
- gap:6px;
-    width:var(--size);
-    height:var(--size);
+     gap:6px;
     display:inline-flex;
- flex-direction: flex-end;
+ justify-self: flex-end;
     border-radius:10px;
     background:linear-gradient(180deg,rgba(255,255,255,0.03),transparent);
     border:1px solid rgba(15,23,42,0.06);
-    box-shadow:var(--card-shadow);
     cursor:pointer;
     transition:transform 160ms ease, background var(--transition);
   }

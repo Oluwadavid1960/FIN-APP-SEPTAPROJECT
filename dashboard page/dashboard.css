@@ -66,9 +66,9 @@
       padding:1.5rem;
       border-radius:12px;
       box-shadow: 0 6px 20px rgba(2,6,23,0.25);
-      min-width:300px;
+      min-width:200px;
       max-width:700px;
-      width:100%;
+      width:50%;
       transition: background var(--transition), box-shadow var(--transition);
     }
 

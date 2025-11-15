@@ -53,12 +53,13 @@ input[type="text"] {
 }
 
 .manage-section {
-  margin-bottom: 25px;
+  margin: 25px;
 }
 
 .manage-section button {
   background: #e9eff6;
   border: none;
+  gap: 5px;
   padding: 8px 14px;
   margin-right: 10px;
   border-radius: 6px;

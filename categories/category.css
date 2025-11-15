@@ -54,6 +54,7 @@ input[type="text"] {
 
 .manage-section {
   margin: 25px;
+  gap:5px;
 }
 
 .manage-section button {

@@ -120,6 +120,62 @@ toggle.addEventListener("change", () =>
     document.body.classList.toggle("dark", toggle.checked);
 });
   
-
+/*
+     Simple theme toggler:
+     - Uses document.documentElement.dataset.theme = "dark" or removed for light
+     - Persists choice to localStorage under 'theme' key
+     - Respects system preference if no saved value
+    */
+    
+    const storageKey = 'theme'; // 'light' | 'dark'
+    const root = document.documentElement;
+    const toggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+    const currentThemeText = document.getElementById('currentTheme');
+    
+    function applyTheme(name){
+      if(name === 'dark'){
+        root.dataset.theme = 'dark';
+        toggleBtn.setAttribute('aria-pressed','true');
+        themeIcon.textContent = '🌙';
+        themeLabel.textContent = 'Dark';
+      } else {
+        root.removeAttribute('data-theme');
+        toggleBtn.setAttribute('aria-pressed','false');
+        themeIcon.textContent = '☀';
+        themeLabel.textContent = 'Light';
+      }
+      currentThemeText.textContent = name || 'system';
+    }
+    
+    /* read saved preference */
+    const saved = localStorage.getItem(storageKey);
+    if(saved === 'dark' || saved === 'light'){
+      applyTheme(saved);
+    } else {
+      // no saved value -> use system preference (but show 'system' on label)
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? 'dark' : 'light');
+      // show current as 'system' to indicate it's from OS (optional)
+      currentThemeText.textContent = 'system (' + (prefersDark ? 'dark' : 'light') + ')';
+    }
+    
+    /* toggle handler */
+    toggleBtn.addEventListener('click', () => {
+      // determine current effective theme
+      const isDark = root.dataset.theme === 'dark';
+      const next = isDark ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem(storageKey, next);
+    });
+    
+    /* optional: listen for system changes and update only if user has not saved a preference */
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if(!localStorage.getItem(storageKey)){
+        applyTheme(e.matches ? 'dark' : 'light');
+        currentThemeText.textContent = 'system (' + (e.matches ? 'dark' : 'light') + ')';
+      }
+    });
 
   

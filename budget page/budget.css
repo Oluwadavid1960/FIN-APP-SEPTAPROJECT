@@ -1,4 +1,11 @@
 
+body{
+  background-image: url(../assets/images/background-image.jpeg);
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  width: 100%
+}
 
 main{
   margin: 0px auto;

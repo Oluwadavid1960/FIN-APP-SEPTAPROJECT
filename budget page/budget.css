@@ -7,7 +7,7 @@ body{
   background-size: cover;
   object-fit: cover;
   background-repeat: no-repeat;
-  width: 100%
+  width: fit-content;
 }
 
 main{

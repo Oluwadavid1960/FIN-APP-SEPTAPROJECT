@@ -11,14 +11,14 @@
     />
     <title>FinTracker</title>
     <link rel="stylesheet" href="./dashboard.css" />
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link href="../assets/images/fin-app-logo.jpg" rel="icon" type="image/png" />
+    <link href="../assets/images/updated-logo.jpg" rel="icon" type="image/png" />
 
     <link
       rel="stylesheet"
@@ -39,9 +39,9 @@
         <div>
           <a href="./dashboard.html"
             ><img
-              src="../assets/images/fin-app-logo.jpg"
+              src="../assets/images/updated-logo.jpg"
               alt="logo"
-              width="50px"
+              width="100px"
           /></a>
         </div>
         <!-- Nav link for dashboard and budget -->
@@ -73,8 +73,8 @@
           <!-- links which shows when you hover on user image -->
           <div class="hidden flex-col">
             <div class="subcard">
-              <p>Precious James</p>
-              <p>preciousjames@gmail.com</p>
+              <p>Septa Acadamy</p>
+              <p>academy.septa@gmail.com</p>
             </div>
             <ul class="flex-col">
               <div>
@@ -102,6 +102,7 @@
               <li>
                 <a href="../index.html">Log-out</a>
               </li>
+      </div>
             </ul>
           </div>
         </div>
@@ -127,7 +128,7 @@
                   width="40px"
                   class="user"
                 />
-                <p>Precious James</p>
+                <p>SEPTA ACADEMY</p>
               </div>
               <ul class="flex-col">
                 <li>
@@ -161,11 +162,14 @@
                 <li>
                   <a href="../index.html">Log-out</a>
                 </li>
+      </div>
               </ul>
             </div>
           </div>
         </div>
       </div>
+    </header>
+    </div>
     </header>
     <main class="main-container">
       <section class="wallets-section">
@@ -212,14 +216,42 @@
         </div>
 
         <div class="empty-state">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3472/3472620.png"
-            alt="No transactions"
-          />
+          <img src="https://cdn-icons-png.flaticon.com/512/3472/3472620.png"
+            alt="No transactions"/>
           <p>You have no transactions.</p>
         </div>
+        
+        <div class="dashboard-container">
+        <h2>Dashboard Expense Chart</h2>
+
+        <div class="chart-box">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
       </section>
     </main>
+
+    <div class="card" role="region" aria-label="Demo card showing dark mode">
+      <!-- accessible toggle button -->
+      <button id="themeToggle"
+              class="theme-toggle"
+              aria-pressed="false"
+              aria-label="Toggle dark mode"
+              title="Toggle dark mode">
+        <!-- icon will be set by JS -->
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+        <span class="badge" id="themeLabel">Dark</span>
+      </button>
+    
+    <div class="demo" aria-hidden="false">
+      <div class="row">
+        <div class="muted">Current theme</div>
+        <div id="currentTheme">—</div>
+      </div>
+      </div>
+    </div>
+  </div>
+    
     <footer class="footer">
       <p>©2025 FinTracker | All rights reserved</p>
     </footer>

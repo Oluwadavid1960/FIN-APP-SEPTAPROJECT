@@ -1,4 +1,14 @@
 
+/* body{
+  background-image: url(../assets/images/B-img.webp);
+  background-blur: 8px;
+  background-blend-mode: lighten;
+  opacity:0.4;
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  width: fit-content;
+} */
 
 main{
   margin: 0px auto;

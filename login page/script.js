@@ -2,7 +2,8 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     e.preventDefault();
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
-  
+
+    document.getElementById("password")
     if (!email || !password) {
       alert("Please fill in both email and password.");
       return;
@@ -10,6 +11,6 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   
     // Simulated login
     alert(`Welcome back! ${email}!`);
-    window.location.href = "./dashboard page/dashboard.html"; // redirect example
+    window.location.href = "../dashboard page/dashboard.html"; // redirect example
   });
   

@@ -53,22 +53,24 @@ input[type="text"] {
 }
 
 .manage-section {
-  margin-bottom: 25px;
+  margin: 25px;
+  gap:5px;
 }
 
 .manage-section button {
-  background: #e9eff6;
+  background: #B2FFFC;
   border: none;
+  gap: 5px;
   padding: 8px 14px;
   margin-right: 10px;
   border-radius: 6px;
-  color: #555;
+  color: white;
   cursor: pointer;
   font-weight: 500;
 }
 
 .manage-section button:hover {
-  background: #d9e6f5;
+  background: #ACFFAC;
 }
 
 h4 {
@@ -143,6 +145,13 @@ h4 {
 
 .btn-delete:hover {
   background: #fbd1cd;
+}
+
+button, #save-btn{
+  background-color:#ACFFAC
+  color: white;
+  display: flex;
+  flex-direction: right;
 }
 
 /* Responsive layout */

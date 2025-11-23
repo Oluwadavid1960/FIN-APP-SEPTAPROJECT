@@ -12,58 +12,26 @@
     flex-direction: column;
     min-height: 100vh;
   }
-/*   
-  .top-banner {
-    background-color: #00bfa6;
-    text-align: center;
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-  }
-  
-  .navbar {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 24px;
-    border-bottom: 1px solid #e5e5e5;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .logo img {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .logo span {
-    font-size: 20px;
-    font-weight: 600;
-    color: #00bfa6;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #444;
-    margin-right: 20px;
-    font-size: 15px;
-  }
-  
-  .nav-links a.active {
-    color: #00bfa6;
-    border-bottom: 2px solid #00bfa6;
-    padding-bottom: 4px;
-  }
-  
-  .user-icon {
-    font-size: 20px;
-  } */
-  
+
+.dashboard-container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+       .dashboard-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .chart-box {
+            width: 100%;
+            height: 400px;
+        }
+
   .main-container {
     flex: 1;
     padding: 30px 60px;
@@ -213,6 +181,52 @@
     font-size: 13px;
     color: #666;
   }
+
+/* CSS variables for light theme (defaults) */
+    :root{
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --card: #f5f5f7;
+      --accent: #2563eb;
+      --transition: 200ms ease;
+    }
+  
+    /* Dark theme variables */
+    :root[data-theme="dark"]{
+      --bg: #0b0d10;
+      --fg: #e6eef8;
+      --muted: #9aa6b2;
+      --card: #0f1720;
+      --accent: #60a5fa;
+    }
+  
+    /* Respect system preference initially if no saved preference */
+    @media (prefers-color-scheme: dark){
+      :root:not([data-theme]){
+        --bg: #0b0d10;
+        --fg: #e6eef8;
+        --muted: #9aa6b2;
+        --card: #0f1720;
+        --accent: #60a5fa;
+      }
+    }
+
+/* Toggle button */
+    .theme-toggle{
+      appearance:none;
+      border:0;
+      background:transparent;
+      cursor:pointer;
+      padding:0.25rem;
+      border-radius:8px;
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      color:var(--fg);
+      transition: background var(--transition), color var(--transition);
+    }
+    .theme-toggle:focus{outline:2px solid color-mix(in srgb, var(--accent) 40%, transparent); outline-offset:3px}
   
   @media (max-width: 768px) {
     .main-container {
@@ -226,4 +240,78 @@
       align-items: stretch;
     }
   }
+
+/* CSS variables for light theme (defaults) */
+    :root{
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #666666;
+      --card: #f5f5f7;
+      --accent: #2563eb;
+      --transition: 200ms ease;
+    }
+  
+    /* Dark theme variables */
+    :root[data-theme="dark"]{
+      --bg: #0b0d10;
+      --fg: #e6eef8;
+      --muted: #9aa6b2;
+      --card: #0f1720;
+      --accent: #60a5fa;
+    }
+  
+    /* Respect system preference initially if no saved preference */
+    @media (prefers-color-scheme: dark){
+      :root:not([data-theme]){
+        --bg: #0b0d10;
+        --fg: #e6eef8;
+        --muted: #9aa6b2;
+        --card: #0f1720;
+        --accent: #60a5fa;
+      }
+    }
+
+.card{
+ margin:12px;
+      background:var(--card);
+      padding:1.5rem;
+      border-radius:12px;
+      box-shadow: 0 6px 20px rgba(2,6,23,0.25);
+      min-width:300px;
+      max-width:500px;
+      width:100%;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+/* Toggle button */
+    .theme-toggle{
+      appearance:none;
+      border:0;
+      background:transparent;
+      cursor:pointer;
+      padding:0.25rem;
+      border-radius:8px;
+      display:inline-flex;
+      align-items:center;
+      gap:0.5rem;
+      color:var(--fg);
+      transition: background var(--transition), color var(--transition);
+    }
+    .theme-toggle:focus{outline:2px solid color-mix(in srgb, var(--accent) 40%, transparent); outline-offset:3px}
+  
+    .badge{
+      font-size:0.9rem;
+      padding:0.25rem 0.5rem;
+      border-radius:999px;
+      background: color-mix(in srgb, var(--fg) 8%, transparent);
+    }
+
+/* small demo content */
+    .demo{
+      margin-top:1rem;
+      display:grid;
+      gap:0.5rem;
+    }
+    .row{display:flex;justify-content:space-between;align-items:center}
+    .muted{color:var(--muted);font-size:0.95rem}
   

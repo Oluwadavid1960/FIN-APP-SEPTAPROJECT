@@ -19,4 +19,123 @@ document.querySelector(".add-wallet").addEventListener("click", () => {
       endDate.value = startDate.value;
     }
   });
-  
+
+// Idle time before logout (in milliseconds)
+const IDLE_LIMIT = 5 * 60 * 1000; // 5 minutes
+
+let idleTimer;
+
+// Reset idle timer on user activity
+function resetIdleTimer() {
+    clearTimeout(idleTimer);
+
+    idleTimer = setTimeout(() => {
+        logout();
+    }, IDLE_LIMIT);
+}
+
+// Logout function (redirect or clear user data)
+function logout() {
+    // Clear saved login (optional)
+    localStorage.removeItem("savedEmail");
+
+    // Redirect to login page
+    window.location.href = "login.html";
+
+     const ctx = document.getElementById('myChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar', // change to line, pie, doughnut, etc.
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Revenue (₦)',
+                    data: [120000, 150000, 100000, 180000, 200000, 170000],
+                    borderWidth: 2,
+                    backgroundColor: 'rgba(54, 162, 235, 0.4)',
+                    borderColor: 'rgba(54, 162, 235, 1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+
+    // OR call backend logout:
+    fetch("/logout").then(() => window.location.href = "/login");
+}
+
+// // Detect user activity
+window.onload = () => {
+    resetIdleTimer();
+
+    // Activity types
+    window.addEventListener("mousemove", resetIdleTimer);
+    window.addEventListener("keydown", resetIdleTimer);
+    window.addEventListener("click", resetIdleTimer);
+    window.addEventListener("scroll", resetIdleTimer);
+    window.addEventListener("touchstart", resetIdleTimer);
+};
+
+ /*
+     Simple theme toggler:
+     - Uses document.documentElement.dataset.theme = "dark" or removed for light
+     - Persists choice to localStorage under 'theme' key
+     - Respects system preference if no saved value
+    */
+    
+    const storageKey = 'theme'; // 'light' | 'dark'
+    const root = document.documentElement;
+    const toggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
+    const currentThemeText = document.getElementById('currentTheme');
+    
+    function applyTheme(name){
+      if(name === 'dark'){
+        root.dataset.theme = 'dark';
+        toggleBtn.setAttribute('aria-pressed','true');
+        themeIcon.textContent = '🌙';
+        themeLabel.textContent = 'Dark';
+      } else {
+        root.removeAttribute('data-theme');
+        toggleBtn.setAttribute('aria-pressed','false');
+        themeIcon.textContent = '☀️';
+        themeLabel.textContent = 'Light';
+      }
+      currentThemeText.textContent = name || 'system';
+    }
+    
+    /* read saved preference */
+    const saved = localStorage.getItem(storageKey);
+    if(saved === 'dark' || saved === 'light'){
+      applyTheme(saved);
+    } else {
+      // no saved value -> use system preference (but show 'system' on label)
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? 'dark' : 'light');
+      // show current as 'system' to indicate it's from OS (optional)
+      currentThemeText.textContent = 'system (' + (prefersDark ? 'dark' : 'light') + ')';
+    }
+    
+    /* toggle handler */
+    toggleBtn.addEventListener('click', () => {
+      // determine current effective theme
+      const isDark = root.dataset.theme === 'dark';
+      const next = isDark ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem(storageKey, next);
+    });
+    
+    /* optional: listen for system changes and update only if user has not saved a preference */
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if(!localStorage.getItem(storageKey)){
+        applyTheme(e.matches ? 'dark' : 'light');
+        currentThemeText.textContent = 'system (' + (e.matches ? 'dark' : 'light') + ')';
+      }
+    });

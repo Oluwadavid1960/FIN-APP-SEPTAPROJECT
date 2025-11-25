@@ -162,123 +162,211 @@
         </div>
       </div>
     </header>
-    <main>
-    <h3>Budgets</h3>
-    <div class="folder">
-      <p class="text">
-        Take control of your expenses and save more money by organising your
-        budgets.
-      </p>
-      <button id="openformbtn" class="btns">Create a New Budget</button>
+    body data-theme="light">
+<header>
+
+
+</header>
+
+<main class="container">
+  <div class="top-grid">
+    <div class="left-col">
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div><strong>Create quick budget</strong><div class="small-muted">Add budgets, set amount and start date</div></div>
+        </div>
+
+        <div class="field">
+          <label class="small">Name</label>
+          <input id="quickName" placeholder="e.g. Groceries">
+        </div>
+
+        <div class="field">
+          <label class="small">Amount</label>
+          <input id="quickAmount" type="number" placeholder="1000">
+        </div>
+
+        <div style="display:flex; gap:8px;">
+          <div style="flex:1">
+            <div class="field">
+              <label class="small">Currency</label>
+              <select id="quickCurrency">
+                <option>USD</option><option>EUR</option><option>NGN</option><option>GBP</option>
+              </select>
+            </div>
+          </div>
+          <div style="flex:1">
+            <div class="field">
+              <label class="small">Category</label>
+              <select id="quickCategory">
+                <option>All Categories</option>
+                <option>Food</option><option>Transport</option><option>Shopping</option><option>Bills</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:8px; margin-top:12px;">
+          <button class="btn" id="btnCreateQuick">Create Budget</button>
+          <button class="btn ghost" id="btnOpenAdvanced">Advanced</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <strong>Filters & Search</strong>
+        <div class="search-row" style="margin-top:10px">
+          <input id="searchInput" class="search" placeholder="Search budgets by name..." />
+          <select id="filterCategory" class="select">
+            <option value="">All categories</option>
+            <option>All Categories</option><option>Food</option><option>Transport</option><option>Shopping</option><option>Bills</option>
+          </select>
+        </div>
+
+        <div style="display:flex; gap:8px; margin-top:10px;">
+          <select id="filterRecurrence" class="select">
+            <option value="">All recurrence</option>
+            <option>Once</option><option>Daily</option><option>Weekly</option><option>Biweekly</option>
+          </select>
+          <select id="sortBy" class="select">
+            <option value="newest">Sort: Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="amount-asc">Amount ↑</option>
+            <option value="amount-desc">Amount ↓</option>
+            <option value="progress-desc">Progress ↓</option>
+          </select>
+        </div>
+
+        <div style="margin-top:12px;">
+          <strong>Overview</strong>
+          <div class="summary" style="margin-top:10px;">
+            <div class="box">
+              <div class="muted">Total budgets</div>
+              <strong id="summaryCount">0</strong>
+            </div>
+            <div class="box">
+              <div class="muted">Total allocated</div>
+              <strong id="summaryTotal">0</strong>
+            </div>
+            <div class="box">
+              <div class="muted">Spent</div>
+              <strong id="summarySpent">0</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="modal" id="budgetform">
-      <div class="modal-center">
-      <div class="modal-content">
-     
-        <span id="closebtn" class="close">&times</span>
-        <h2>Add New Budget</h2>
-        <h3 class="heading">
-          <i class="feather icon-dollar-sign"></i> General Info
-        </h3>
-        <form action>
-          <div class="budget-form">
-            <!-- Budget Name -->
-            <div class="form-group">
-              <label for="budgetName">Budget Name</label>
-              <input
-                type="text"
-                id="budgetName"
-                placeholder="Enter budget name" required
-              />
-            </div>
+    <div>
+      <div style="display:flex; justify-content:space-between; gap:12px; margin-bottom:12px; align-items:center">
+        <div>
+          <h2 style="margin:0">Budgets</h2>
+          <div class="muted" style="margin-top:6px">Manage budgets, track spending and progress</div>
+        </div>
 
-            <!-- Amount + Currency side by side -->
-            <div class="form-row">
-              <div class="form-group">
-                <label for="amount">Amount</label>
-                <input type="number" id="amount" placeholder="Enter amount" required />
-              </div>
-
-              <div class="form-group">
-                <label for="currency">Currency</label>
-                <select id="currency">
-                  <option>United States dollar</option>
-                  <option>Euro</option>
-                  <option>British Pound</option>
-                  <option>Canadian Dollar</option>
-                  <option>Australian Dollar</option>
-                  <option>Swiss Franc</option>
-                  <option>Japanese Yen</option>
-                  <option>Chinese Yuan</option>
-                  <option>Nigerian naira</option>
-                  <option>Cuban peso</option>
-                  <option>Swiss franc</option>
-                  <option>Kuwait dinar</option>
-                  <option>Qatar riyal</option>
-                  <option>South African rand</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="filter">
-            <h3 class="heading">Budget Filter</h3>
-            <label for="" id="categories">Budget for</label>
-            <select name="All Categories">
-              <option value="all">All Categories</option>
-              <option value="beauty">Beauty</option>
-              <option value="car">Car</option>
-              <option value="edu">Education</option>
-              <option value="enjoy">Entertainment</option>
-              <option value="Fam">Family & Personal</option>
-              <option value="gifts">Gifts</option>
-              <option value="grocery">Grocery</option>
-              <option value="health">Healthcare</option>
-              <option value="home">Home</option>
-              <option value="other">Other</option>
-              <option value="shop">Shopping</option>
-              <option value="sports">Sports & Hobbies</option>
-              <option value="transpot">Transport</option>
-              <option value="travel">Travel</option>
-              <option value="work">Work</option>
-            </select>
-          </div>
-
-          <div class="period">
-            <h3 class="heading">
-              <i class="feather icon-calendar"></i>Budget Period
-            </h3>
-            <span id="recurrence">Recurrence</span>
-            <div class="recurrence-options">
-              <input type="radio" id="once" name="recurrence" checked />
-              <label for="once">Once</label>
-
-              <input type="radio" id="daily" name="recurrence" />
-              <label for="daily">Daily</label>
-
-              <input type="radio" id="weekly" name="recurrence" />
-              <label for="weekly">Weekly</label>
-
-              <input type="radio" id="biweekly" name="recurrence" />
-              <label for="biweekly">Biweekly</label>
-
-              <input type="radio" id="monthly" name="recurrence" />
-              <label for="monthly">Monthly</label>
-
-              <input type="radio" id="yearly" name="recurrence" />
-              <label for="yearly">Yearly</label>
-            </div>
-
-            <label for="" id="startdate">Start Date</label>
-            <input type="date" id="date" required />
-            
-          </div>
-          <button id="create" class="btns">Create a New Budget</button>
-        </form>
+        <div style="display:flex; gap:8px; align-items:center">
+          <button id="btnExpandAll" class="btn ghost">Expand all</button>
+          <button id="openCreateTop" class="btn">+ New</button>
+        </div>
       </div>
+
+      <div class="panel list-panel" id="listPanel">
+        <!-- budget items inserted here -->
+      </div>
+
+      <div class="panel" style="margin-top:12px;">
+        <strong>Dashboard</strong>
+        <div style="margin-top:12px" id="dashboardGrid" class="dashboard">
+          <!-- summary cards -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Modal for Create/Edit/Expense -->
+<div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <strong id="modalTitle">New Budget</strong>
+      <div style="display:flex; gap:8px;">
+        <button id="closeModal" class="btn ghost">Close</button>
       </div>
     </div>
-  </main>
+
+    <div style="margin-top:12px">
+      <div class="field">
+        <label class="small">Budget name</label>
+        <input id="mName" placeholder="e.g. Groceries">
+      </div>
+
+      <div class="field">
+        <label class="small">Amount</label>
+        <input id="mAmount" type="number" placeholder="1000">
+      </div>
+
+      <div style="display:flex; gap:8px;">
+        <div style="flex:1" class="field">
+          <label class="small">Currency</label>
+          <select id="mCurrency"><option>USD</option><option>EUR</option><option>NGN</option><option>GBP</option></select>
+        </div>
+        <div style="flex:1" class="field">
+          <label class="small">Category</label>
+          <select id="mCategory"><option>All Categories</option><option>Food</option><option>Transport</option><option>Shopping</option><option>Bills</option></select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="small">Recurrence</label>
+        <div style="display:flex; gap:8px;">
+          <button class="rec" data-val="Once">Once</button>
+          <button class="rec" data-val="Daily">Daily</button>
+          <button class="rec" data-val="Weekly">Weekly</button>
+          <button class="rec" data-val="Biweekly">Biweekly</button>
+          <button class="rec" data-val="monthly">Monthly</button>
+          <button class="rec" data-val="quarterly">Quarterly</button>
+          <button class="rec" data-val="yearly">yearly</button>
+
+
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="small">Start date</label>
+        <input id="mDate" type="date">
+      </div>
+
+      <div style="display:flex; gap:8px; margin-top:12px;">
+        <button id="saveModal" class="btn">Save</button>
+        <button id="deleteFromModal" class="btn del-btn" style="display:none">Delete</button>
+      </div>
+
+      <hr style="margin:14px 0; border:none; border-top:1px solid rgba(0,0,0,0.06)">
+
+      <div id="expenseBlock" style="display:none">
+        <strong>Expenses for this budget</strong>
+        <div style="margin-top:10px; display:flex; gap:8px;">
+          <input id="expAmount" placeholder="Amount" type="number" style="flex:1">
+          <input id="expDate" type="date" style="width:160px">
+        </div>
+        <div style="margin-top:8px;">
+          <input id="expNote" placeholder="Note (optional)">
+        </div>
+        <div style="margin-top:8px;">
+          <button id="addExpenseBtn" class="btn expense-btn">Add expense</button>
+        </div>
+
+        <div id="expensesList" style="margin-top:12px; display:flex; flex-direction:column; gap:8px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="controls">
+    <button id="themeToggle" class="btn ghost" title="Toggle theme">🌙</button>
+    <button id="openCreate" class="btn">+ New Budget</button>
+        </div>
+
   </body>
 </html>

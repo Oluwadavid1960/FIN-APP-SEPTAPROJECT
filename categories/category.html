@@ -31,6 +31,13 @@
             <a href="../budget page/budget.html">Budget</a>
           </li>
         </ul>
+
+        <div class="app" id="app">
+
+    <div class="controls">
+      <button class="toggle-btn" id="darkToggle" title="Toggle dark mode">🌗</button>
+      <button class="toggle-btn" id="iconsOpenBtn" title="Open icons">🔎 Icons</button>
+    </div>
         <!-- user image and clickable items -->
         <div class="menu">
           <div>
@@ -145,7 +152,8 @@
         </div>
       </div>
     </header>
-  <main>
+  
+ <!-- <main>
   <div class="container">
     <h2>Create a new category</h2>
     <div class="category-section">
@@ -298,6 +306,132 @@
   <button>Save Changes</button>
     </div>
   </div>
-</main>
+</main>-->
+
+  <main>
+    <!-- LEFT: Add / Edit Form -->
+    <section class="card" id="formCard">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="display:flex;gap:10px;align-items:center">
+          <strong id="formTitle">Create a new category</strong>
+          <span class="muted-small" id="formMode">(Add)</span>
+        </div>
+
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="btn secondary" id="loadSample">Load sample</button>
+          <button class="btn" id="saveBtn">Save</button>
+        </div>
+      </div>
+
+      <label>Icon</label>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn secondary" id="openIcons">Choose Icon</button>
+        <select id="iconSelect" class="input" style="max-width:160px">
+          <!-- fallback few -->
+          <option value="💼">💼 Business</option>
+          <option value="💵">💵 Money</option>
+          <option value="🎁">🎁 Gift</option>
+          <option value="🏦">🏦 Bank</option>
+        </select>
+      </div>
+
+      <label>Color</label>
+      <input type="color" id="colorInput" value="#2563eb" />
+
+      <label>Name</label>
+      <input id="nameInput" class="input" placeholder="New category name" />
+
+      <label>Type</label>
+      <select id="typeInput" class="input">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+
+      <label>Transactions count</label>
+      <input id="txInput" class="input" type="number" min="0" value="0" />
+
+      <div class="preview" id="livePreview">
+        <div class="icon" id="previewIcon" style="background:#2563eb">💼</div>
+        <div>
+          <div class="meta" id="previewName">New category</div>
+          <div class="muted-small" id="previewMeta">Income • 0 transactions</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;">
+        <button class="btn" id="confirmSave">Save category</button>
+        <button class="btn secondary" id="resetForm">Reset</button>
+        <button class="btn danger" id="deleteWhileEdit" style="display:none">Delete</button>
+      </div>
+    </section>
+
+    <!-- RIGHT: list, search, sort -->
+    <section>
+      <div class="card">
+        <div class="toolbar">
+          <input id="search" class="input search" placeholder="Search categories..." />
+          <select id="sortSelect" class="input select-inline">
+            <option value="alpha">Sort: A → Z</option>
+            <option value="alpha-desc">Sort: Z → A</option>
+            <option value="type">Sort: Type</option>
+            <option value="txdesc">Sort: Most transactions</option>
+          </select>
+          <button class="btn secondary" id="mergeModeBtn">Merge categories</button>
+          <button class="btn secondary" id="clearAllBtn" title="Clear all categories">Clear all</button>
+        </div>
+
+        <div style="margin-top:10px" id="mergeControls" hidden>
+          <div class="merge-bar">
+            <div class="muted">Selected: <span id="selectedCount">0</span></div>
+            <select id="mergeTarget" class="input" style="max-width:220px">
+              <!-- filled dynamically -->
+            </select>
+            <button class="btn" id="doMerge">Merge into target</button>
+            <button class="btn secondary" id="cancelMerge">Cancel</button>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="list-area">
+          <div class="list-header">
+            <div><strong style="color:var(--accent)">Income categories</strong></div>
+            <div class="muted-small">Manage income</div>
+          </div>
+          <div class="list" id="incomeList"></div>
+
+          <div style="height:14px"></div>
+
+          <div class="list-header">
+            <div><strong style="color:var(--accent)">Expense categories</strong></div>
+            <div class="muted-small">Manage expenses</div>
+          </div>
+          <div class="list" id="expenseList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ICONS MODAL -->
+<div class="modal-back" id="iconsModal">
+  <div class="modal">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <strong>Choose icon</strong>
+      <button class="btn secondary" id="closeIcons">Close</button>
+    </div>
+    <div style="margin-top:8px" class="icon-grid" id="iconGrid"></div>
+  </div>
+</div>
+
+<!-- CONFIRM MODAL -->
+<div class="modal-back" id="confirmModal">
+  <div class="modal" role="dialog">
+    <strong id="confirmTitle">Confirm</strong>
+    <div id="confirmBody" class="muted-small" style="margin-top:10px">Are you sure?</div>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+      <button class="btn secondary" id="confirmCancel">Cancel</button>
+      <button class="btn danger" id="confirmOk">Confirm</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>

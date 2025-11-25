@@ -10,7 +10,7 @@
   width: fit-content;
 } */
 
-main{
+/*main{
   margin: 0px auto;
   padding:15px 55px;
   overflow-x: hidden;
@@ -134,137 +134,101 @@ main{
   gap: 10px;
   margin: 8px auto;
   width: 100%;
-  object-fit: cover;
-   overflow-x: scroll;
-}
-
-/* Hide the actual radio buttons */
-.recurrence-options input[type="radio"] {
-  display: none;
-}
-
-/* Style the labels to look like buttons */
-.recurrence-options label {
-  padding: 6px 12px;
-  border-radius: 20px;
-  background-color: #e4e7eb;
-  color: #333;
-  cursor: pointer;
-  width: 100%;
-  transition: all 0.3s;
-   text-align: center;
-  
-}
+  object-fit: cover;*/
 
 
 
-#recurrence{
-    margin: 12px;
-    font-weight: lighter;
-    color: grey;
-    
-}
-
-.recurrence-options label:hover{
-    background-color: #10eab4;
-    cursor: pointer;
-}
-
-label{
-    text-decoration-color: grey;
-    font-size: 12px;
-   
-}
-
-#startdate{
-    margin: 12px;
-    display: flex;
-    margin: 10px;
-    font-weight: lighter;
-    font-size: 12px;
-    color: grey;
-}
-
-input[type="date"]{
-    margin: 10px;
-    display: flex;
-    justify-content: left;
-    border: 2px solid whitesmoke;
-    border-radius: 6px;
-    padding:8px 12px;
-    font-size: bold;
-    align-items: center;
-}
-
-#create{
-    background-color: green;
-    color: white;
-    font-size: 14px;
-}
-
-.budget-form {
-  max-width: 500px;
-  margin: 20px auto;
-  font-family: sans-serif;
-}
-
-
-
-
-/* Form row for side-by-side inputs */
-.form-row {
-  display: flex;
-  gap: 12px;
-}
-
-/* Form group styling */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin-bottom: 16px;
-}
-
-/* Labels */
-.form-group label {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 6px;
-}
-
-.form-group input,
-.form-group select {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  width: 60%;
-  transition: border-color 0.2s;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  border-color: #00c292; /* green focus like Spendee */
-}
-
-#currency{
-    width: 100%;
-}
-
-
-::-webkit-scrollbar{
-  display: none;
-}
-
-@media (max-width: 640px) {
- main{
-
-  padding:15px 30px;
- 
-}
-  .modal-content {
-  width: 70%;
-   max-width: 300px;
+ :root{
+    --bg:#f4f6f8; --panel:#fff; --muted:#8b95a1; --accent:#009f4d; --danger:#e53935;
+    --card-shadow: 0 4px 18px rgba(15,20,25,0.06);
+  }
+  [data-theme="dark"]{
+    --bg:#0f1720; --panel:#0b1116; --muted:#9aa8b6; --accent:#2bd77a; --danger:#ff6b6b;
+    --card-shadow: 0 6px 24px rgba(0,0,0,0.6);
   }
 
-}
+  *{box-sizing:border-box}
+  body{ 
+  padding:15px 55px;
+  overflow-x: hidden;
+ background-image: url("../assets/images/septa.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  background-size: cover;
+    margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  [data-theme="dark"] body { color: #e6eef6; }
+
+  header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 18px; background:var(--panel); box-shadow:var(--card-shadow);
+    position:sticky; top:0; z-index:50;
+  }
+  .brand{display:flex; gap:12px; align-items:center}
+  .logo {
+    width:44px; height:44px; border-radius:8px; background:linear-gradient(135deg,#0fbf6c,#0b8b56);
+    display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700;
+  }
+  .title { font-size:18px; font-weight:700; }
+  .controls { display:flex; gap:8px; align-items:center; }
+
+  .container{max-width:1100px; margin:18px auto; padding:0 18px;}
+
+  .top-grid { display:grid; grid-template-columns: 1fr; gap:16px; margin-bottom:18px; }
+  @media(min-width:900px){ .top-grid{grid-template-columns: 360px 1fr;} }
+
+  .panel { background:var(--panel); border-radius:12px; padding:16px; box-shadow:var(--card-shadow); }
+
+  /* Left panel (create + filters + summary) */
+  .left-col .panel { margin-bottom:16px; }
+  .btn { background:var(--accent); color:#fff; border:0; padding:10px 12px; border-radius:8px; cursor:pointer; font-weight:600; }
+  .btn.ghost { background:transparent; color:var(--accent); border:1px solid rgba(0,0,0,0.06); }
+  .field { margin-top:12px; display:flex; flex-direction:column; gap:8px; }
+  input[type="text"], input[type="number"], input[type="date"], select, textarea {
+    padding:10px; border-radius:8px; border:1px solid #d3d9df; background:transparent; outline:none;
+  }
+  label.small { font-size:13px; color:var(--muted); }
+
+  /* Dashboard / Budgets list */
+  .dashboard { display:grid; grid-template-columns: repeat(1,1fr); gap:14px; }
+  @media(min-width:700px){ .dashboard { grid-template-columns: repeat(2,1fr); } }
+  @media(min-width:1100px){ .dashboard { grid-template-columns: repeat(3,1fr); } }
+
+  .budget-card { padding:14px; border-radius:12px; display:flex; flex-direction:column; gap:10px; }
+  .row { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+  .small-muted { color:var(--muted); font-size:13px; }
+
+  .progress-wrap { background: #eef3f6; border-radius:999px; height:10px; overflow:hidden; }
+  .progress-bar { height:100%; width:0%; background:var(--accent); border-radius:999px; transition:width .4s ease; }
+
+  .actions { display:flex; gap:8px; }
+  .action-btn { padding:8px 10px; border-radius:8px; border:0; cursor:pointer; font-weight:600; }
+  .edit-btn { background:#ffcc00; color:#0b1220; }
+  .del-btn { background:var(--danger); color:#fff; }
+  .expense-btn { background:#2b9df7; color:#fff; }
+
+  /* Modal */
+  .modal-backdrop { position:fixed; inset:0; background:rgba(2,6,23,0.45); display:none; align-items:center; justify-content:center; z-index:120; padding:20px; }
+  .modal { width:100%; max-width:560px; background:var(--panel); border-radius:12px; padding:18px; box-shadow:var(--card-shadow); max-height:90vh; overflow:auto; }
+  .modal .row { margin-bottom:8px; }
+
+  /* budget list row in table style */
+  .list-panel { display:flex; flex-direction:column; gap:12px; }
+  .list-item { display:flex; gap:12px; align-items:center; padding:12px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border:1px solid rgba(0,0,0,0.03); }
+  .cat-badge { width:44px; height:44px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; }
+  .list-item .meta { flex:1; display:flex; flex-direction:column; gap:6px; }
+  .meta strong { font-size:15px; }
+  .tiny { font-size:12px; color:var(--muted); }
+  .search-row { display:flex; gap:8px; align-items:center; margin-bottom:12px; }
+  .select, .search { padding:9px; border-radius:8px; border:1px solid #cfd8df; }
+
+  .summary { display:flex; gap:8px; align-items:center; justify-content:space-between; }
+  .summary .box { flex:1; padding:12px; border-radius:10px; background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent); text-align:center; }
+  .summary strong { display:block; font-size:18px; margin-top:6px; }
+
+  footer { text-align:center; padding:24px 0; color:var(--muted); font-size:13px; }
+
+  /* small helpers */
+  .muted { color:var(--muted); font-size:13px; }
+  .icon { font-size:18px; margin-right:6px; }

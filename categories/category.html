@@ -10,6 +10,83 @@
     <link rel="stylesheet" href="../style.css" />
     <script src="../script.js" defer></script>
 <style>
+
+/* ---------------- NAVBAR FIX FOR DESKTOP ---------------- */
+
+header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Main nav links */
+.navlink {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navlink a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0b1220;
+}
+
+[data-theme="dark"] .navlink a {
+  color: #e6eef6;
+}
+
+/* Hide mobile menu on desktop */
+.mobile-menu {
+  display: none;
+}
+
+@media(max-width: 900px) {
+  .navlink {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+/* User dropdown */
+.menu {
+  position: relative;
+}
+
+.menu > div button {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu .hidden {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: var(--panel);
+  padding: 15px;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  display: none;
+}
+
+.menu:hover .hidden {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+ 
   :root{
     --bg:#f4f7ff; --card:#ffffff; --muted:#6b7280; --accent:#2563eb; --danger:#ef4444;
     --success:#10b981; --shadow: 0 6px 18px rgba(16,24,40,0.06);

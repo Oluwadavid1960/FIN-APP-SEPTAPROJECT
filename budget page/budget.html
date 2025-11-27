@@ -27,6 +27,83 @@
     <script type="module" src="./budget.js"></script>
   
 <style>
+
+/* ---------------- NAVBAR FIX FOR DESKTOP ---------------- */
+
+header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Main nav links */
+.navlink {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navlink a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0b1220;
+}
+
+[data-theme="dark"] .navlink a {
+  color: #e6eef6;
+}
+
+/* Hide mobile menu on desktop */
+.mobile-menu {
+  display: none;
+}
+
+@media(max-width: 900px) {
+  .navlink {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+/* User dropdown */
+.menu {
+  position: relative;
+}
+
+.menu > div button {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu .hidden {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: var(--panel);
+  padding: 15px;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  display: none;
+}
+
+.menu:hover .hidden {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+    
   :root{
     --bg:#f4f6f8; --panel:#fff; --muted:#8b95a1; --accent:#009f4d; --danger:#e53935;
     --card-shadow: 0 4px 18px rgba(15,20,25,0.06);

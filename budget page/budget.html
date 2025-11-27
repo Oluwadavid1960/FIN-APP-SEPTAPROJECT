@@ -262,7 +262,7 @@
     <div class="left-col">
       <div class="panel">
         <div style="display:flex;justify-content:space-between;align-items:center">
-          <div><strong>Create quick budget</strong><div class="small-muted">Add budgets, set amount and start date</div></div>
+          <div><strong>Create Budget</strong><div class="small-muted">Add budgets, set amount and start date</div></div>
         </div>
 
         <div class="field">
@@ -295,9 +295,22 @@
           </div>
         </div>
 
+      <div class="field">
+        <label class="small">Recurrence</label>
+        <div style="display:flex; gap:8px;">
+          <button class="rec" data-val="Once">Once</button>
+          <button class="rec" data-val="Daily">Daily</button>
+          <button class="rec" data-val="Weekly">Weekly</button>
+          <button class="rec" data-val="Biweekly">Biweekly</button>
+          <button class="rec" data-val="monthly">Monthly</button>
+          <button class="rec" data-val="quarterly">Quarterly</button>
+          <button class="rec" data-val="yearly">yearly</button>
+        </div>
+      </div>
+
         <div style="display:flex; gap:8px; margin-top:12px;">
           <button class="btn" id="btnCreateQuick">Create Budget</button>
-          <button class="btn ghost" id="btnOpenAdvanced">Advanced</button>
+          <!--button class="btn ghost" id="btnOpenAdvanced">Advanced</button-->
         </div>
       </div>
 
@@ -355,7 +368,7 @@
 
         <div style="display:flex; gap:8px; align-items:center">
           <button id="btnExpandAll" class="btn ghost">Expand all</button>
-          <button id="openCreateTop" class="btn">+ New</button>
+          <!--button id="openCreateTop" class="btn">+ New</button-->
         </div>
       </div>
 
@@ -406,20 +419,7 @@
         </div>
       </div>
 
-      <div class="field">
-        <label class="small">Recurrence</label>
-        <div style="display:flex; gap:8px;">
-          <button class="rec" data-val="Once">Once</button>
-          <button class="rec" data-val="Daily">Daily</button>
-          <button class="rec" data-val="Weekly">Weekly</button>
-          <button class="rec" data-val="Biweekly">Biweekly</button>
-          <button class="rec" data-val="monthly">Monthly</button>
-          <button class="rec" data-val="quarterly">Quarterly</button>
-          <button class="rec" data-val="yearly">yearly</button>
-
-
-        </div>
-      </div>
+     
 
       <div class="field">
         <label class="small">Start date</label>
@@ -452,10 +452,10 @@
   </div>
 </div>
 
- <div class="controls">
+ <!--div class="controls">
     <button id="themeToggle" class="btn ghost" title="Toggle theme">🌙</button>
     <button id="openCreate" class="btn">+ New Budget</button>
-  </div>
+</div-->
 
 <footer>
      
